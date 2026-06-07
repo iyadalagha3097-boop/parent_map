@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Find Nearby Learning Centres</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQAvXw09kG70I6GC3mTZ+RlNRIJ8Cfw=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Learning Centre Locator</div>
+      <h1>Find the nearest Learning Centre</h1>
+      <p>Allow location access to see nearby centres. Your location is used only on your phone and is not saved.</p>
+    </div>
+    <button id="locateBtn" class="primary-btn">Use my location</button>
+  </header>
+
+  <main>
+    <section class="panel status-panel">
+      <div id="statusText">Tap “Use my location” to start.</div>
+    </section>
+
+    <section class="panel filters">
+      <label>
+        Grade
+        <select id="gradeFilter">
+          <option value="">All grades</option>
+        </select>
+      </label>
+      <label>
+        Directorate
+        <select id="directorateFilter">
+          <option value="">All directorates</option>
+        </select>
+      </label>
+      <label>
+        Search
+        <input id="searchBox" type="search" placeholder="Name or address" />
+      </label>
+    </section>
+
+    <section class="map-wrap">
+      <div id="map"></div>
+    </section>
+
+    <section class="list-header">
+      <h2>Nearest centres</h2>
+      <span id="countText"></span>
+    </section>
+    <section id="results" class="results"></section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-top">
+        <div>
+          <h3 class="lc-name"></h3>
+          <p class="lc-meta"></p>
+        </div>
+        <span class="distance"></span>
+      </div>
+      <p class="address"></p>
+      <p class="grades"></p>
+      <div class="card-actions">
+        <a class="directions" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
