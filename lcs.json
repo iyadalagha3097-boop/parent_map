@@ -1,10 +1,1742 @@
 [
   {
-    "name": "Sample Learning Centre",
-    "lat": 31.501,
-    "lon": 34.466,
-    "directorate": "Gaza",
+    "name": "Al-Kamalyah",
+    "lat": 31.503897,
+    "lon": 34.465397,
+    "directorate": "Gaza East",
+    "grades": "G1-G12",
+    "address": "غزة - البلدة القديمة - جوار المسجد العجمي القديم",
+    "students": 1274,
+    "capacity": 1200
+  },
+  {
+    "name": "AlToffah",
+    "lat": 31.507361,
+    "lon": 34.469466,
+    "directorate": "Gaza East",
+    "grades": "KG2-G8",
+    "address": "التفاح  ساحة الشوا",
+    "students": 1147,
+    "capacity": 1200
+  },
+  {
+    "name": "Abed alfattah hamood",
+    "lat": 31.512355,
+    "lon": 34.467098,
+    "directorate": "Gaza East",
+    "grades": "KG2-G5",
+    "address": "الدرج الشرقي - شارع يافا - مدرسة عبد الفتاح",
+    "students": 1387,
+    "capacity": 800
+  },
+  {
+    "name": "Dar Alarqam",
+    "lat": 31.54044,
+    "lon": 34.46909,
+    "directorate": "Gaza East",
+    "grades": "KG2-G12",
+    "address": "التفاح الغربي - مدرسة دار الارقم",
+    "students": 2358,
+    "capacity": 2000
+  },
+  {
+    "name": "Lolwa Alqatamai",
+    "lat": 31.517353,
+    "lon": 34.432987,
+    "directorate": "Gaza West",
+    "grades": "KG2-G9",
+    "address": "جنوب دوار أنصار - مفترق شاورما معاذ",
+    "students": 1142,
+    "capacity": 1200
+  },
+  {
+    "name": "Tal AlZohoor",
+    "lat": 31.5042222222,
+    "lon": 34.4364166667,
+    "directorate": "Gaza West",
+    "grades": "KG2-G7",
+    "address": "تل الهوي",
+    "students": 749,
+    "capacity": 1200
+  },
+  {
+    "name": "Nile School",
+    "lat": 31.5019166667,
+    "lon": 34.4380833333,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "غزة الرمال الجنوبي تل الهوا بجوار الدفاع المدني",
+    "students": 1875,
+    "capacity": 2400
+  },
+  {
+    "name": "Mayasim (Science Home) Primary",
+    "lat": 31.397591,
+    "lon": 34.304136,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G9",
+    "address": "خان يونس لسان القرارة",
+    "students": 2408,
+    "capacity": 2000
+  },
+  {
+    "name": "Mariam Bent Omran",
+    "lat": 31.4269141749,
+    "lon": 34.3871869147,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "nan",
+    "students": 4264,
+    "capacity": 4200
+  },
+  {
+    "name": "Almotamizoon",
+    "lat": 31.3462985,
+    "lon": 34.2785277,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G10",
+    "address": "خان يونس شارع الأمن الداخلي قبل الكنيس",
+    "students": 2408,
+    "capacity": 2200
+  },
+  {
+    "name": "Hadara",
+    "lat": 31.39139,
+    "lon": 34.302745,
+    "directorate": "Khanyounis East",
+    "grades": "G1-G12",
+    "address": "خان يونس - مواصي القرارة",
+    "students": 2415,
+    "capacity": 2000
+  },
+  {
+    "name": "Al Amal Hope Secondary - qarara",
+    "lat": 31.394396,
+    "lon": 34.302846,
+    "directorate": "Khanyounis East",
+    "grades": "G7-G12",
+    "address": "خان يونس مواصي القرارة",
+    "students": 2188,
+    "capacity": 2000
+  },
+  {
+    "name": "Alnusairat",
+    "lat": 31.4485719974,
+    "lon": 34.3851926923,
+    "directorate": "Middle Area",
+    "grades": "G10-G12",
+    "address": "النصيرات - بجوار النادي الأهلي",
+    "students": 2026,
+    "capacity": 1600
+  },
+  {
+    "name": "Beloved Palestine",
+    "lat": 31.376737,
+    "lon": 34.285237,
+    "directorate": "Khanyounis East",
+    "grades": "G1-G12",
+    "address": "خان يونس - شارع 5",
+    "students": 3223,
+    "capacity": 3000
+  },
+  {
+    "name": "Sanabel KH",
+    "lat": 31.372782,
+    "lon": 34.283347,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خان يونس - شارع 5",
+    "students": 2318,
+    "capacity": 2600
+  },
+  {
+    "name": "Ghaith",
+    "lat": 31.361705,
+    "lon": 34.289592,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G12",
+    "address": "خان يونس - شارع 5",
+    "students": 3520,
+    "capacity": 2600
+  },
+  {
+    "name": "Maarif Al Mazoon Secondary",
+    "lat": 31.394489,
+    "lon": 34.30406,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G6",
+    "address": "خان يونس مواصي القرارة",
+    "students": 1899,
+    "capacity": 2200
+  },
+  {
+    "name": "Ahmed Mansi",
+    "lat": 31.347464,
+    "lon": 34.267345,
+    "directorate": "Rafah",
+    "grades": "KG2-G10",
+    "address": "خان يونس بئر 18 أرض أبو الحصين",
+    "students": 1149,
+    "capacity": 1200
+  },
+  {
+    "name": "Gorot Aloot",
+    "lat": 31.3626909201,
+    "lon": 34.2701253891,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خان يونس - شارع النص",
+    "students": 1772,
+    "capacity": 1400
+  },
+  {
+    "name": "Ghassan Kanafani",
+    "lat": 31.357242,
+    "lon": 34.264083,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G12",
+    "address": "خان يونس الشارع المقابل لمحطة العطار",
+    "students": 5307,
+    "capacity": 3000
+  },
+  {
+    "name": "Watan",
+    "lat": 31.3587602954,
+    "lon": 34.262626011,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "خان يونس شارع روني",
+    "students": 2422,
+    "capacity": 1800
+  },
+  {
+    "name": "Alshafee",
+    "lat": 31.3555619761,
+    "lon": 34.2821186478,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خان يونس المعسكر - مقابل المحكمة الشرعية",
+    "students": 1432,
+    "capacity": 1600
+  },
+  {
+    "name": "Alaqsa",
+    "lat": 31.357875,
+    "lon": 34.275836,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G12",
+    "address": "خان يونس المواصي - حرم جامعة الأقصى",
+    "students": 2186,
+    "capacity": 1600
+  },
+  {
+    "name": "Almajd",
+    "lat": 31.37307,
+    "lon": 34.30351,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G3",
+    "address": "خان يونس - المواصي - مدينة أصداء",
+    "students": 983,
+    "capacity": 1200
+  },
+  {
+    "name": "Alrayaheen",
+    "lat": 31.372463,
+    "lon": 34.302046,
+    "directorate": "Khanyounis East",
+    "grades": "G4-G9",
+    "address": "خان يونس - المواصي - مدينة أصداء",
+    "students": 1271,
+    "capacity": 1200
+  },
+  {
+    "name": "Al Tawoon",
+    "lat": 31.375484,
+    "lon": 34.298877,
+    "directorate": "Khanyounis East",
+    "grades": "G10-G12",
+    "address": "خان يونس - المواصي - مدينة أصداء",
+    "students": 900,
+    "capacity": 1200
+  },
+  {
+    "name": "Amal Malasia",
+    "lat": 31.3563373823,
+    "lon": 34.2978487014,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G12",
+    "address": "خان يونس حي الامل شارع المدرسة",
+    "students": 2828,
+    "capacity": 2400
+  },
+  {
+    "name": "Alamal Kg",
+    "lat": 31.3570378398,
+    "lon": 34.2950613173,
+    "directorate": "Khanyounis West",
     "grades": "KG2-G4",
-    "address": "Sample address"
+    "address": "خان يونس حي الأمل بجوار جمعية إعمار",
+    "students": 2307,
+    "capacity": 2000
+  },
+  {
+    "name": "Alyasmeen",
+    "lat": 31.3467055244,
+    "lon": 34.2970521601,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G2",
+    "address": "خان يونس الحاووز",
+    "students": 444,
+    "capacity": 800
+  },
+  {
+    "name": "Hamad 1",
+    "lat": 31.375517,
+    "lon": 34.319525,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G5",
+    "address": "خان يونس مدينة حمد",
+    "students": 1975,
+    "capacity": 2000
+  },
+  {
+    "name": "Hamad 2",
+    "lat": 31.375879,
+    "lon": 34.32008,
+    "directorate": "Khanyounis East",
+    "grades": "G6-G9",
+    "address": "خان يونس مدينة حمد",
+    "students": 1767,
+    "capacity": 2000
+  },
+  {
+    "name": "Almustaqbal",
+    "lat": 31.3476683,
+    "lon": 34.2857411,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خان يونس البراق الجنوبي",
+    "students": 1786,
+    "capacity": 2200
+  },
+  {
+    "name": "Ibn Roshd Primary & Secondary",
+    "lat": 31.4276686423,
+    "lon": 34.3570144772,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "الزوايدة - التعابين",
+    "students": 3298,
+    "capacity": 3400
+  },
+  {
+    "name": "Khadeeja 1",
+    "lat": 31.4270740293,
+    "lon": 34.3521156907,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "دير البلح البصة",
+    "students": 1311,
+    "capacity": 1200
+  },
+  {
+    "name": "Khawla",
+    "lat": 31.415528451,
+    "lon": 34.3663271069,
+    "directorate": "Middle Area",
+    "grades": "G5-G9",
+    "address": "دير البلح - شار ع مستشفى الأقصى",
+    "students": 798,
+    "capacity": 1000
+  },
+  {
+    "name": "Sukaina",
+    "lat": 31.4154327698,
+    "lon": 34.365939796,
+    "directorate": "Middle Area",
+    "grades": "G3-G7",
+    "address": "دير البلح - شارع مديرية الأوقاف",
+    "students": 690,
+    "capacity": 1000
+  },
+  {
+    "name": "Yasser Alnamrouti",
+    "lat": 31.37659,
+    "lon": 34.313236,
+    "directorate": "Khanyounis East",
+    "grades": "G10-G12",
+    "address": "خان يونس مدينة حمد",
+    "students": 2072,
+    "capacity": 2000
+  },
+  {
+    "name": "Almanfalouti",
+    "lat": 31.415750486,
+    "lon": 34.3653963804,
+    "directorate": "Middle Area",
+    "grades": "G8-G12",
+    "address": "دير البلح شارع مديرية الأوقاف",
+    "students": 2058,
+    "capacity": 2000
+  },
+  {
+    "name": "Sanabel 1",
+    "lat": 31.4396037,
+    "lon": 34.3896191,
+    "directorate": "Middle Area",
+    "grades": "KG2-G7",
+    "address": "دير البلح - شارع السلام",
+    "students": 2433,
+    "capacity": 2600
+  },
+  {
+    "name": "Sanabel 2",
+    "lat": 31.42164,
+    "lon": 34.34767,
+    "directorate": "Middle Area",
+    "grades": "G8-G12",
+    "address": "دير البلح - شارع السلام",
+    "students": 2876,
+    "capacity": 2600
+  },
+  {
+    "name": "Deir Albalah 1",
+    "lat": 31.41116173,
+    "lon": 34.34887397,
+    "directorate": "Middle Area",
+    "grades": "G3-G5",
+    "address": "دير البلح  بجوار عيادة الحكومة",
+    "students": 552,
+    "capacity": 800
+  },
+  {
+    "name": "Deir Albalah 2",
+    "lat": 31.4113417349,
+    "lon": 34.3488739729,
+    "directorate": "Middle Area",
+    "grades": "G10-G12",
+    "address": "دير البلح  بجوار عيادة الحكومة",
+    "students": 1266,
+    "capacity": 1200
+  },
+  {
+    "name": "Abdel Kareem Alaklouk",
+    "lat": 31.4160627075,
+    "lon": 34.3501426577,
+    "directorate": "Middle Area",
+    "grades": "G6-G9",
+    "address": "دير البلح - بجوار عيادة الحكومة",
+    "students": 1195,
+    "capacity": 1200
+  },
+  {
+    "name": "Alaisheya 1",
+    "lat": 31.41728,
+    "lon": 34.348636,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "دير البلح - خلف البلدية",
+    "students": 2224,
+    "capacity": 2400
+  },
+  {
+    "name": "Alaisheya 2",
+    "lat": 31.417266,
+    "lon": 34.348683,
+    "directorate": "Middle Area",
+    "grades": "G10-G12",
+    "address": "دير البلح - خلف البلدية",
+    "students": 2048,
+    "capacity": 1600
+  },
+  {
+    "name": "Rofaida",
+    "lat": 31.4225394659,
+    "lon": 34.343909204,
+    "directorate": "Middle Area",
+    "grades": "G1-G9",
+    "address": "دير البلح - بجوار الهلال الأحمر",
+    "students": 637,
+    "capacity": 1000
+  },
+  {
+    "name": "Yafa",
+    "lat": 31.41983,
+    "lon": 34.34641,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "دير البلح-حي البشارة جوار مستشفى يافا",
+    "students": 725,
+    "capacity": 1200
+  },
+  {
+    "name": "Bader",
+    "lat": 31.4029933826,
+    "lon": 34.3504956365,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "دير البلح - المحطة ملعب عنان",
+    "students": 2229,
+    "capacity": 2000
+  },
+  {
+    "name": "Khaled Ben Alwaleed",
+    "lat": 31.4409835077,
+    "lon": 34.3883534074,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "النصيرات - بجوار المديرية",
+    "students": 1625,
+    "capacity": 1600
+  },
+  {
+    "name": "Muscat Secondary",
+    "lat": 31.4412615195,
+    "lon": 34.3893710375,
+    "directorate": "Middle Area",
+    "grades": "G10-G12",
+    "address": "النصيرات - شارع العشرين بجوار المديرية",
+    "students": 4457,
+    "capacity": 3600
+  },
+  {
+    "name": "Mamdouh Saidam",
+    "lat": 31.4410690939,
+    "lon": 34.3888415694,
+    "directorate": "Middle Area",
+    "grades": "G10-G12",
+    "address": "النصيرات - خلف المديرية",
+    "students": 1932,
+    "capacity": 2400
+  },
+  {
+    "name": "Filter",
+    "lat": 31.4158260235,
+    "lon": 34.3658577204,
+    "directorate": "Middle Area",
+    "grades": "G1-G12",
+    "address": "دير البلح -شارع مديرية الاوقاف",
+    "students": 1138,
+    "capacity": 2000
+  },
+  {
+    "name": "Alburaij 1",
+    "lat": 31.4437742003,
+    "lon": 34.4005708692,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "nan",
+    "students": 1730,
+    "capacity": 1800
+  },
+  {
+    "name": "Alnojoom",
+    "lat": 31.4487916659,
+    "lon": 34.3849244714,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "النصيرات - بجوار النادي الأهلي",
+    "students": 926,
+    "capacity": 1000
+  },
+  {
+    "name": "Mawasi",
+    "lat": 31.374022,
+    "lon": 34.291031,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G6",
+    "address": "خان يونس المواصي بالقرب من كلية الرباط",
+    "students": 878,
+    "capacity": 1200
+  },
+  {
+    "name": "Anwar",
+    "lat": 31.33681,
+    "lon": 34.25576,
+    "directorate": "Rafah",
+    "grades": "KG2-G12",
+    "address": "خانيونس منطقة الاقليمي",
+    "students": 3404,
+    "capacity": 2000
+  },
+  {
+    "name": "Zahrat Al-Amal (Flower of Hope)",
+    "lat": 31.338087,
+    "lon": 34.254364,
+    "directorate": "Rafah",
+    "grades": "KG2-G12",
+    "address": "خانيونس منطقة الاقليمي",
+    "students": 1826,
+    "capacity": 1800
+  },
+  {
+    "name": "Basmet Amal",
+    "lat": 31.341671,
+    "lon": 34.26608,
+    "directorate": "Rafah",
+    "grades": "KG2-G9",
+    "address": "خانيونس بئر 19",
+    "students": 1489,
+    "capacity": 1600
+  },
+  {
+    "name": "Rowafid Al-Amal",
+    "lat": 31.340497,
+    "lon": 34.263481,
+    "directorate": "Rafah",
+    "grades": "KG2-G12",
+    "address": "خانبونس بئر 20",
+    "students": 2192,
+    "capacity": 2000
+  },
+  {
+    "name": "Al-Zahraa",
+    "lat": 31.342435,
+    "lon": 34.269653,
+    "directorate": "Rafah",
+    "grades": "KG2-G12",
+    "address": "خانيونس بئر 19",
+    "students": 1168,
+    "capacity": 1200
+  },
+  {
+    "name": "Bodoor Al Amal (Seeds of Hope)",
+    "lat": 31.347676,
+    "lon": 34.259931,
+    "directorate": "Rafah",
+    "grades": "KG2-G12",
+    "address": "خانيونس بئر 18",
+    "students": 1704,
+    "capacity": 1800
+  },
+  {
+    "name": "Burair",
+    "lat": 31.53842,
+    "lon": 34.479619,
+    "directorate": "Gaza North",
+    "grades": "KG2-G3",
+    "address": "غزة الصفطاوي",
+    "students": 709,
+    "capacity": 1000
+  },
+  {
+    "name": "Huthaifah bin Al-Yaman",
+    "lat": 31.5413204881,
+    "lon": 34.4851214278,
+    "directorate": "Gaza North",
+    "grades": "KG2-G10",
+    "address": "بئر النعجة مقابل عيادة أم عوني الشوا",
+    "students": 756,
+    "capacity": 1000
+  },
+  {
+    "name": "Saleh",
+    "lat": 31.5526052886,
+    "lon": 34.4689307213,
+    "directorate": "Gaza North",
+    "grades": "KG2-G10",
+    "address": "الخزندار أرض عنان مخيم صالح البردويل",
+    "students": 663,
+    "capacity": 1000
+  },
+  {
+    "name": "Balqees Al-Yaman",
+    "lat": 31.5033808942,
+    "lon": 34.4311147928,
+    "directorate": "Gaza West",
+    "grades": "KG2-G10",
+    "address": "مقابل مدرسة الراهبات الوردية",
+    "students": 941,
+    "capacity": 1400
+  },
+  {
+    "name": "Hasan",
+    "lat": 31.5318238555,
+    "lon": 34.4590383767,
+    "directorate": "Gaza West",
+    "grades": "KG2-G9",
+    "address": "النصر شارع العيون",
+    "students": 595,
+    "capacity": 800
+  },
+  {
+    "name": "Suliman Sultan",
+    "lat": 31.5207012,
+    "lon": 34.4512268,
+    "directorate": "Gaza West",
+    "grades": "KG2-G10",
+    "address": "شارع الثورة",
+    "students": 1271,
+    "capacity": 1400
+  },
+  {
+    "name": "Matahen",
+    "lat": 31.3970145,
+    "lon": 34.3275681,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "دير البلح - شارع البركة - مسجد المجاهدين",
+    "students": 983,
+    "capacity": 1000
+  },
+  {
+    "name": "Jaafar",
+    "lat": 31.497053,
+    "lon": 34.443155,
+    "directorate": "Gaza East",
+    "grades": "KG2-G6",
+    "address": "شارع 8 قرب الصالات",
+    "students": 1069,
+    "capacity": 1400
+  },
+  {
+    "name": "Sanabel Al-Samer",
+    "lat": 31.515954,
+    "lon": 34.457395,
+    "directorate": "Gaza East",
+    "grades": "G1-G10",
+    "address": "مفترق السامر بجانب مدرسة الإمام الشافعي",
+    "students": 1136,
+    "capacity": 1400
+  },
+  {
+    "name": "Rawabi Al-Toffah",
+    "lat": 31.513528,
+    "lon": 34.473499,
+    "directorate": "Gaza East",
+    "grades": "KG2-G10",
+    "address": "التفاح - شارع يافا - خلف مسجد السلف",
+    "students": 1623,
+    "capacity": 1400
+  },
+  {
+    "name": "Gheras Al-Sabrah",
+    "lat": 31.501027,
+    "lon": 34.448709,
+    "directorate": "Gaza East",
+    "grades": "KG2-G7",
+    "address": "غزة - الصبرة - بجوار مركز الوكالة الصحي",
+    "students": 1253,
+    "capacity": 1200
+  },
+  {
+    "name": "Awda Roots",
+    "lat": 31.498495,
+    "lon": 34.449306,
+    "directorate": "Gaza East",
+    "grades": "KG2-G11",
+    "address": "الزيتون - شارع النديم غرب مدرسة عين جالوت",
+    "students": 1021,
+    "capacity": 1200
+  },
+  {
+    "name": "Afaq",
+    "lat": 31.344636,
+    "lon": 34.279087,
+    "directorate": "Rafah",
+    "grades": "KG2-G6",
+    "address": "العطار، بالقرب من اطباء بلا حدود، شرق الكنيس",
+    "students": 945,
+    "capacity": 1000
+  },
+  {
+    "name": "Shams Al-Ofoq",
+    "lat": 31.35169,
+    "lon": 34.254598,
+    "directorate": "Rafah",
+    "grades": "KG2-G10",
+    "address": "مخيم شمس بالقرب من الثقافة والفكر الحر",
+    "students": 1005,
+    "capacity": 1000
+  },
+  {
+    "name": "Rowad",
+    "lat": 31.343867,
+    "lon": 34.278239,
+    "directorate": "Rafah",
+    "grades": "KG2-G9",
+    "address": "منطقة العطار - بجوار الكنيس",
+    "students": 2077,
+    "capacity": 2400
+  },
+  {
+    "name": "Hadeeqa- Bonian",
+    "lat": 31.5028146,
+    "lon": 34.4523939,
+    "directorate": "Gaza East",
+    "grades": "G1-G8",
+    "address": "غزة - الزيتون - خلف مبنى الأوقاف",
+    "students": 2142,
+    "capacity": 1600
+  },
+  {
+    "name": "Mosa Bin Nusair",
+    "lat": 31.514697,
+    "lon": 34.466283,
+    "directorate": "Gaza East",
+    "grades": "KG2-G10",
+    "address": "التفاح شارع النفق",
+    "students": 1142,
+    "capacity": 1200
+  },
+  {
+    "name": "Ard Zaytoon",
+    "lat": 31.494405,
+    "lon": 34.450413,
+    "directorate": "Gaza East",
+    "grades": "KG2-G11",
+    "address": "الزيتون - شارع النديم - أرض أبومراحيل",
+    "students": 2431,
+    "capacity": 2400
+  },
+  {
+    "name": "Fahmi Al-Jerjawi",
+    "lat": 31.513114,
+    "lon": 34.460245,
+    "directorate": "Gaza East",
+    "grades": "KG2-G10",
+    "address": "الدرج - بالقرب من عيادة الدرج",
+    "students": 1659,
+    "capacity": 1600
+  },
+  {
+    "name": "Masqat-Toffah",
+    "lat": 31.517891,
+    "lon": 34.469625,
+    "directorate": "Gaza East",
+    "grades": "KG2-G11",
+    "address": "شارع النفق(بورسعيد) مسجد حراء",
+    "students": 1056,
+    "capacity": 1800
+  },
+  {
+    "name": "Shadia Abu Ghazalah",
+    "lat": 31.5366867722,
+    "lon": 34.489419043,
+    "directorate": "Gaza North",
+    "grades": "KG2-G9",
+    "address": "شمال غزة -جباليا - الفالوجا",
+    "students": 815,
+    "capacity": 1600
+  },
+  {
+    "name": "Manarah",
+    "lat": 31.5397468437,
+    "lon": 34.4719417691,
+    "directorate": "Gaza North",
+    "grades": "KG2-G12",
+    "address": "أرض الشنطي مقابل مسجد عمر بن الخطاب",
+    "students": 1519,
+    "capacity": 2800
+  },
+  {
+    "name": "Salah Al-Deen",
+    "lat": 31.5435812785,
+    "lon": 34.494807601,
+    "directorate": "Gaza North",
+    "grades": "KG2-G10",
+    "address": "بيت لاهيا/ الفاخورة بجوار صالة الفريد",
+    "students": 1435,
+    "capacity": 1800
+  },
+  {
+    "name": "Awni Al-Herthani",
+    "lat": 31.546396,
+    "lon": 34.471085,
+    "directorate": "Gaza North",
+    "grades": "KG2-G8",
+    "address": "شارع مصنع اللبن",
+    "students": 1395,
+    "capacity": 1600
+  },
+  {
+    "name": "Falooja",
+    "lat": 31.5375166087,
+    "lon": 34.4894244075,
+    "directorate": "Gaza North",
+    "grades": "KG2-G12",
+    "address": "معسكر جباليا / مربع مدارس الفالوجا",
+    "students": 1530,
+    "capacity": 2000
+  },
+  {
+    "name": "Itqan",
+    "lat": 31.5354319161,
+    "lon": 34.4732544422,
+    "directorate": "Gaza North",
+    "grades": "KG2-G9",
+    "address": "حي عبادالرحمن",
+    "students": 1021,
+    "capacity": 1200
+  },
+  {
+    "name": "Osama Bin Zaid",
+    "lat": 31.5383416087,
+    "lon": 34.4790533781,
+    "directorate": "Gaza North",
+    "grades": "G5-G12",
+    "address": "الصفطاوي",
+    "students": 1766,
+    "capacity": 1800
+  },
+  {
+    "name": "Othman Bin Affan",
+    "lat": 31.545593,
+    "lon": 34.478431,
+    "directorate": "Gaza North",
+    "grades": "KG2-G9",
+    "address": "التوام مقابل موقع ال 17",
+    "students": 1105,
+    "capacity": 1400
+  },
+  {
+    "name": "Saad Bin Abi Waqqas",
+    "lat": 31.5389293714,
+    "lon": 34.4794197678,
+    "directorate": "Gaza North",
+    "grades": "G5-G12",
+    "address": "حي عباد الرحمن شارع الصفطاوي",
+    "students": 1200,
+    "capacity": 1400
+  },
+  {
+    "name": "Sarari",
+    "lat": 31.5280235696,
+    "lon": 34.484234333,
+    "directorate": "Gaza North",
+    "grades": "KG2-G10",
+    "address": "شمال غزة جباليا البلد سراري بجوار مصلى الحسن",
+    "students": 1138,
+    "capacity": 1600
+  },
+  {
+    "name": "Ab-Buraq",
+    "lat": 31.5248055556,
+    "lon": 34.4557222222,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "جنوب مقبرة الشيخ رضوان",
+    "students": 1301,
+    "capacity": 1600
+  },
+  {
+    "name": "Asmaa Bint AbuBakr",
+    "lat": 31.5300555556,
+    "lon": 34.4717222222,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "تقاطع شارع الجلاء مع الشيخ رضوان",
+    "students": 1722,
+    "capacity": 1800
+  },
+  {
+    "name": "Jaleel",
+    "lat": 31.5046666667,
+    "lon": 34.4355277778,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "مقابل منتزة برشلونة",
+    "students": 1287,
+    "capacity": 1400
+  },
+  {
+    "name": "Kafer Qasem",
+    "lat": 31.5294166667,
+    "lon": 34.4496388889,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "غرب برج الوحدة",
+    "students": 2237,
+    "capacity": 1800
+  },
+  {
+    "name": "Mosab Bin Omair",
+    "lat": 31.5295,
+    "lon": 34.4704444444,
+    "directorate": "Gaza West",
+    "grades": "KG2-G9",
+    "address": "شرق رمزون الشيخ رضوان",
+    "students": 978,
+    "capacity": 1200
+  },
+  {
+    "name": "Nasr",
+    "lat": 31.5324444444,
+    "lon": 34.4580555556,
+    "directorate": "Gaza West",
+    "grades": "KG2-G11",
+    "address": "داخل مدرسة النصر",
+    "students": 922,
+    "capacity": 1200
+  },
+  {
+    "name": "Ruqayya",
+    "lat": 31.5068333333,
+    "lon": 34.4371388889,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "بالقرب مستشفى الأردني",
+    "students": 1625,
+    "capacity": 2000
+  },
+  {
+    "name": "Sheikh Radwan",
+    "lat": 31.5364166667,
+    "lon": 34.4660833333,
+    "directorate": "Gaza West",
+    "grades": "KG2-G9",
+    "address": "شمال مسجد الشيخ رضوان",
+    "students": 1088,
+    "capacity": 1200
+  },
+  {
+    "name": "Adnan Al Alami",
+    "lat": 31.5413055556,
+    "lon": 34.457,
+    "directorate": "Gaza West",
+    "grades": "KG2-G11",
+    "address": "شمال أبراج الفيروز",
+    "students": 1193,
+    "capacity": 1600
+  },
+  {
+    "name": "Al Azhar",
+    "lat": 31.5163888889,
+    "lon": 34.4377777778,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "غرب جامعة الأزهر",
+    "students": 2139,
+    "capacity": 2800
+  },
+  {
+    "name": "Al Sharqa",
+    "lat": 31.535981,
+    "lon": 34.4513704,
+    "directorate": "Gaza West",
+    "grades": "KG2-G11",
+    "address": "غرب جامعة القدس المفتوحة",
+    "students": 1332,
+    "capacity": 1600
+  },
+  {
+    "name": "Kateeba",
+    "lat": 31.5169444444,
+    "lon": 34.4361944444,
+    "directorate": "Gaza West",
+    "grades": "KG2-G6",
+    "address": "الرمال أرض الكتيبة",
+    "students": 1621,
+    "capacity": 1800
+  },
+  {
+    "name": "Sawafeer",
+    "lat": 31.5414444444,
+    "lon": 34.4601388889,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "المقوسي داخل مدرسة السوافير",
+    "students": 1877,
+    "capacity": 2400
+  },
+  {
+    "name": "Talented",
+    "lat": 31.5334722222,
+    "lon": 34.4668055556,
+    "directorate": "Gaza West",
+    "grades": "KG2-G11",
+    "address": "سوق الشيخ رضوان",
+    "students": 1124,
+    "capacity": 1200
+  },
+  {
+    "name": "Resalah",
+    "lat": 31.387881,
+    "lon": 34.29811,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G9",
+    "address": "خان يونس -مواصي القرارة بالقرب من جامع الهداية",
+    "students": 1131,
+    "capacity": 1000
+  },
+  {
+    "name": "Masar",
+    "lat": 31.387526,
+    "lon": 34.303366,
+    "directorate": "Khanyounis East",
+    "grades": "G1-G12",
+    "address": "المواصي الشمالية بالقرب من مسجد الهداية",
+    "students": 1262,
+    "capacity": 1800
+  },
+  {
+    "name": "Abdulhameed Khan",
+    "lat": 31.370358,
+    "lon": 34.312783,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G6",
+    "address": "جنوب برج الاسري - مقابل مدرسة رؤية جنوب حمد",
+    "students": 711,
+    "capacity": 1200
+  },
+  {
+    "name": "Human",
+    "lat": 31.393596,
+    "lon": 34.299878,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G10",
+    "address": "مواصي القرارة،شمال كافتيريا الأهرام، مصيف امواج",
+    "students": 1344,
+    "capacity": 2200
+  },
+  {
+    "name": "Omar Al-Agha",
+    "lat": 31.377559,
+    "lon": 34.325152,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G9",
+    "address": "شمال مدينة حمد بجوار مصنع الكرتون",
+    "students": 2408,
+    "capacity": 2000
+  },
+  {
+    "name": "Romida",
+    "lat": 31.369257,
+    "lon": 34.298501,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G10",
+    "address": "مفترق الصناعة مع شارع خمسة مزارع فتوح",
+    "students": 924,
+    "capacity": 1600
+  },
+  {
+    "name": "Scholars without borders",
+    "lat": 31.372038,
+    "lon": 34.292255,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G12",
+    "address": "شارع خمسة شرق مدرسة المواصي",
+    "students": 2770,
+    "capacity": 2400
+  },
+  {
+    "name": "Wahg",
+    "lat": 31.3418930766,
+    "lon": 34.3045920469,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خانيونس -البلد -سوق الزيتون -ديوان عائلة الفرا",
+    "students": 944,
+    "capacity": 1200
+  },
+  {
+    "name": "Ibn Khaldoun",
+    "lat": 31.3491350788,
+    "lon": 34.3025583699,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "خان يونس البلد بجوار مدرسة عبد الله ابو ستة",
+    "students": 1473,
+    "capacity": 1800
+  },
+  {
+    "name": "Abdullah Abu Sitta",
+    "lat": 31.3499630541,
+    "lon": 34.3029547172,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "شارع القسام بالقرب من كلية مجتمع الأقصى",
+    "students": 1514,
+    "capacity": 1800
+  },
+  {
+    "name": "AlFajr",
+    "lat": 31.3699431129,
+    "lon": 34.2758199273,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G6",
+    "address": "مقابل كافتيريا الأصدقاء",
+    "students": 695,
+    "capacity": 1200
+  },
+  {
+    "name": "Al-Barakah",
+    "lat": 31.3751009143,
+    "lon": 34.2804282125,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "خانيونس - شارع المجايدة - طريق البحر",
+    "students": 807,
+    "capacity": 1200
+  },
+  {
+    "name": "Al Thanaa",
+    "lat": 31.3640920351,
+    "lon": 34.2923930609,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G10",
+    "address": "حي الياباني - خلف برسكت",
+    "students": 1344,
+    "capacity": 1600
+  },
+  {
+    "name": "Anqaa 1",
+    "lat": 31.398588,
+    "lon": 34.314841,
+    "directorate": "Khanyounis East",
+    "grades": "G6-G12",
+    "address": "شارع الحية (الجهة الغربية ) - بجوار موقع التل",
+    "students": 987,
+    "capacity": 1200
+  },
+  {
+    "name": "Haifa",
+    "lat": 31.3488926339,
+    "lon": 34.3034663247,
+    "directorate": "Khanyounis West",
+    "grades": "G10-G12",
+    "address": "خان يونس البلد شارع القسام",
+    "students": 1482,
+    "capacity": 1600
+  },
+  {
+    "name": "Israa",
+    "lat": 31.3447045603,
+    "lon": 34.2908497453,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خانيونس الحي النمساوي مدرسة الإسراء",
+    "students": 2355,
+    "capacity": 2200
+  },
+  {
+    "name": "Lotus Flower",
+    "lat": 31.3642275186,
+    "lon": 34.2723532758,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خان يونس - المواصي - خلف محطة تحلية اللحام",
+    "students": 1938,
+    "capacity": 1200
+  },
+  {
+    "name": "Life and Freedom",
+    "lat": 31.3651117789,
+    "lon": 34.28738763,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G10",
+    "address": "موقع القادسية",
+    "students": 1328,
+    "capacity": 1600
+  },
+  {
+    "name": "Durrat Al-Mawasi",
+    "lat": 31.3721837231,
+    "lon": 34.28464365,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "شارع مختار المجايده مسجد ام خليل",
+    "students": 1400,
+    "capacity": 2400
+  },
+  {
+    "name": "Nibras",
+    "lat": 31.3594361599,
+    "lon": 34.3016638754,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G10",
+    "address": "خان يونس حي الامل العرايشية منتزه البركة",
+    "students": 1070,
+    "capacity": 1200
+  },
+  {
+    "name": "Safa and Marwa",
+    "lat": 31.3397290722,
+    "lon": 34.295778212,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G10",
+    "address": "البطن السمين - غرب دوار بريكة",
+    "students": 1493,
+    "capacity": 1600
+  },
+  {
+    "name": "Sultan Mahmoud",
+    "lat": 31.3594714994,
+    "lon": 34.2765540851,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "مقابل جامعة الاقصى البوابة الرئيسية",
+    "students": 1412,
+    "capacity": 1600
+  },
+  {
+    "name": "Yaqeen",
+    "lat": 31.398848,
+    "lon": 34.315093,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G5",
+    "address": "شارع العبارة الشرقي",
+    "students": 1157,
+    "capacity": 1200
+  },
+  {
+    "name": "Al-Nour 2",
+    "lat": 31.4261749074,
+    "lon": 34.3452478945,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "دير البلح شارع عكيلة خلف محطة عكيلة",
+    "students": 961,
+    "capacity": 2000
+  },
+  {
+    "name": "Mohammed Abu Lia",
+    "lat": 31.4034604045,
+    "lon": 34.3322512507,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "nan",
+    "students": 2775,
+    "capacity": 4000
+  },
+  {
+    "name": "Buraig 2",
+    "lat": 31.4389522004,
+    "lon": 34.3947722018,
+    "directorate": "Middle Area",
+    "grades": "G1-G9",
+    "address": "البريج - خلف محطة ابو عاصي - مخيم العائدين",
+    "students": 1264,
+    "capacity": 1200
+  },
+  {
+    "name": "Palestine Centre",
+    "lat": 31.34528,
+    "lon": 34.25239,
+    "directorate": "Rafah",
+    "grades": "KG2-G9",
+    "address": "احناا المواصي بالقرب من  مسجد عثمان بن عفان بئر 22",
+    "students": 1209,
+    "capacity": 1400
+  },
+  {
+    "name": "Al Quds",
+    "lat": 31.344113,
+    "lon": 34.270278,
+    "directorate": "Rafah",
+    "grades": "KG2-G9",
+    "address": "مخيم طيور الشمس",
+    "students": 2161,
+    "capacity": 2400
+  },
+  {
+    "name": "Atfal Gaza",
+    "lat": 31.341627,
+    "lon": 34.262037,
+    "directorate": "Rafah",
+    "grades": "KG2-G6",
+    "address": "شرق جمعيه الكتاب والسنة",
+    "students": 1451,
+    "capacity": 1600
+  },
+  {
+    "name": "Bodoor Al Salam",
+    "lat": 31.341022,
+    "lon": 34.243013,
+    "directorate": "Rafah",
+    "grades": "KG2-G10",
+    "address": "مواصي رفح الشمالية خلف مستشفى الصليب الاحمر",
+    "students": 1916,
+    "capacity": 2000
+  },
+  {
+    "name": "Bokra Elna",
+    "lat": 31.347745,
+    "lon": 34.270219,
+    "directorate": "Rafah",
+    "grades": "KG2-G7",
+    "address": "مخيم حي السلام",
+    "students": 1150,
+    "capacity": 1400
+  },
+  {
+    "name": "Mohamed Salah Qeshtah",
+    "lat": 31.342533,
+    "lon": 34.264033,
+    "directorate": "Rafah",
+    "grades": "KG2-G10",
+    "address": "بئر 19 شارع محطة ايتا",
+    "students": 1421,
+    "capacity": 1600
+  },
+  {
+    "name": "Talaea Rafah",
+    "lat": 31.347485,
+    "lon": 34.250084,
+    "directorate": "Rafah",
+    "grades": "KG2-G10",
+    "address": "شارع الرشيد شمال مستشفى الميداني البريطاني",
+    "students": 1672,
+    "capacity": 2000
+  },
+  {
+    "name": "Al-Hamd",
+    "lat": 31.378236,
+    "lon": 34.300192,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G9",
+    "address": "مفترق اصداء الغربي-خلف منجرة بارود",
+    "students": 1421,
+    "capacity": 1600
+  },
+  {
+    "name": "Abaqera",
+    "lat": 31.338174,
+    "lon": 34.240828,
+    "directorate": "Rafah",
+    "grades": "KG2-G11",
+    "address": "مسجد معاوية بجانب شاليه شمس",
+    "students": 1748,
+    "capacity": 2000
+  },
+  {
+    "name": "Shams Al-Maarefa",
+    "lat": 31.387387,
+    "lon": 34.298305,
+    "directorate": "Khanyounis East",
+    "grades": "KG2-G10",
+    "address": "شارع الرشيد مدخل أطباء بلا حدود ٢٠٠م",
+    "students": 799,
+    "capacity": 1200
+  },
+  {
+    "name": "Abdullah bin Rawaha",
+    "lat": 31.4037259649,
+    "lon": 34.3247035146,
+    "directorate": "Middle Area",
+    "grades": "KG2-G9",
+    "address": "دير البلح - البركة - بجوار عيادة البركة الحكومية",
+    "students": 967,
+    "capacity": 1200
+  },
+  {
+    "name": "Ferdous",
+    "lat": 31.338999,
+    "lon": 34.240375,
+    "directorate": "Rafah",
+    "grades": "KG2-G10",
+    "address": "فش فرش 2",
+    "students": 1120,
+    "capacity": 1200
+  },
+  {
+    "name": "Abu Obaida Bin Al-Jarrah",
+    "lat": 31.5478841433,
+    "lon": 34.490534842,
+    "directorate": "Gaza North",
+    "grades": "KG2-G7",
+    "address": "بيت لاهيا/ غرب مدرسة أبو عبيدة أرض علوان",
+    "students": 709,
+    "capacity": 1000
+  },
+  {
+    "name": "Owda",
+    "lat": 31.5050833333,
+    "lon": 34.4229722222,
+    "directorate": "Gaza West",
+    "grades": "KG2-G9",
+    "address": "الزيتون - شارع النديم غرب مدرسة عين جالوت",
+    "students": 1599,
+    "capacity": 1600
+  },
+  {
+    "name": "Yousef Al-Seddeeq",
+    "lat": 31.3377679205,
+    "lon": 34.2878680046,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "خانيونس بطن السمين خلف المقابر من الجهة الجنوبية",
+    "students": 783,
+    "capacity": 1000
+  },
+  {
+    "name": "Tal Zaatar",
+    "lat": 31.546541,
+    "lon": 34.495143,
+    "directorate": "Gaza North",
+    "grades": "KG2-G12",
+    "address": "بيت لاهيا/ أصلان مدرسة تل الزعتر",
+    "students": 1295,
+    "capacity": 1200
+  },
+  {
+    "name": "Ibdaa",
+    "lat": 31.3505789747,
+    "lon": 34.2828176021,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G9",
+    "address": "خان يونس شارع الامن الداخلي خلف بركس السمري",
+    "students": 1352,
+    "capacity": 1600
+  },
+  {
+    "name": "Alawael",
+    "lat": 31.3525963,
+    "lon": 34.269148,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G9",
+    "address": "خان يونس المواصي - العطار",
+    "students": 1430,
+    "capacity": 1400
+  },
+  {
+    "name": "Life School Initiative",
+    "lat": 31.3574681893,
+    "lon": 34.2807806199,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G12",
+    "address": "خان يونس المواصي خلف المستشفى الكويتي",
+    "students": 1998,
+    "capacity": 1600
+  },
+  {
+    "name": "Ard Tayba",
+    "lat": 31.3689134322,
+    "lon": 34.2846972942,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G12",
+    "address": "خان يونس شرق جامعة الأقصى",
+    "students": 3366,
+    "capacity": 2800
+  },
+  {
+    "name": "Jarar Alqudwa",
+    "lat": 31.3669564705,
+    "lon": 34.2767059502,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G7",
+    "address": "خان يونس المواصي بالقرب من مسجد القبة",
+    "students": 1258,
+    "capacity": 1200
+  },
+  {
+    "name": "Life USA",
+    "lat": 31.3528654042,
+    "lon": 34.2968509899,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G12",
+    "address": "خان يونس حي الأمل اول شارع الترنس",
+    "students": 2441,
+    "capacity": 2400
+  },
+  {
+    "name": "Tareq Ben Zeyad",
+    "lat": 31.3431385255,
+    "lon": 34.293355325,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G12",
+    "address": "خان يونس البطن السمين بجوار المستشفى الأردني",
+    "students": 2706,
+    "capacity": 2600
+  },
+  {
+    "name": "Falah",
+    "lat": 31.502143,
+    "lon": 34.454286,
+    "directorate": "Gaza East",
+    "grades": "G1-G9",
+    "address": "الزيتون - قرب مسجد الامام الشافعي",
+    "students": 1768,
+    "capacity": 1200
+  },
+  {
+    "name": "Tafawuq",
+    "lat": 31.5438372980909,
+    "lon": 34.4621785282925,
+    "directorate": "Gaza North",
+    "grades": "KG2-G6",
+    "address": "الكرامة / شارع المخابرات",
+    "students": 138,
+    "capacity": 1000
+  },
+  {
+    "name": "Haleema",
+    "lat": 31.530704,
+    "lon": 34.477473,
+    "directorate": "Gaza North",
+    "grades": "KG2-G9",
+    "address": "جباليا البلد النزلة مقابل محطة خلة",
+    "students": 1014,
+    "capacity": 1200
+  },
+  {
+    "name": "Nakhwa",
+    "lat": 31.4095710514,
+    "lon": 34.3378082513,
+    "directorate": "Middle Area",
+    "grades": "KG2-G10",
+    "address": "دير البلح- شارع البركة- مقابل محلات شادي بشير",
+    "students": 2409,
+    "capacity": 2800
+  },
+  {
+    "name": "Masr",
+    "lat": 31.455051,
+    "lon": 34.398825,
+    "directorate": "Middle Area",
+    "grades": "KG2-G10",
+    "address": "النصيرات بجوار شركة الكهرباء",
+    "students": 1067,
+    "capacity": 800
+  },
+  {
+    "name": "Khadeeja 2",
+    "lat": 31.4270969167,
+    "lon": 34.3522015214,
+    "directorate": "Middle Area",
+    "grades": "G1-G12",
+    "address": "دير البلح البصة",
+    "students": 679,
+    "capacity": 1000
+  },
+  {
+    "name": "That Al-Sawary",
+    "lat": 31.546329,
+    "lon": 34.459958,
+    "directorate": "Gaza North",
+    "grades": "KG2-G9",
+    "address": "الكرامة / شارع المخابرات",
+    "students": 328,
+    "capacity": 1000
+  },
+  {
+    "name": "Al-Hurriya Al-Jadedah",
+    "lat": 31.485962,
+    "lon": 34.40516,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "النصيرات - صلاح الدين - مفترق الشهداء",
+    "students": 804,
+    "capacity": 2000
+  },
+  {
+    "name": "Ein Helwa - Zahra School",
+    "lat": 31.472415,
+    "lon": 34.405857,
+    "directorate": "Middle Area",
+    "grades": "KG2-G10",
+    "address": "مدينة الزهراء - المخيم المصري",
+    "students": 613,
+    "capacity": 1800
+  },
+  {
+    "name": "Orooba",
+    "lat": 31.460884737,
+    "lon": 34.389430046,
+    "directorate": "Middle Area",
+    "grades": "KG2-G12",
+    "address": "النصيرات - المخيم الجديد - مقابل مدارس الأونروا",
+    "students": 1707,
+    "capacity": 1600
+  },
+  {
+    "name": "Fathy Balawy",
+    "lat": 31.441775749,
+    "lon": 34.3982443213,
+    "directorate": "Middle Area",
+    "grades": "G4-G12",
+    "address": "البريج - شارع السكة - بجوار ملعب ابو هويشل",
+    "students": 1342,
+    "capacity": 1400
+  },
+  {
+    "name": "Amjad",
+    "lat": 31.3456096596,
+    "lon": 34.2741165156,
+    "directorate": "Khanyounis West",
+    "grades": "KG2-G10",
+    "address": "جنوب جامعة الاقصى شرق محطة العطار",
+    "students": 655,
+    "capacity": 1000
+  },
+  {
+    "name": "Daraj Club",
+    "lat": 31.515583,
+    "lon": 34.461175,
+    "directorate": "Gaza East",
+    "grades": "G1-G12",
+    "address": "شارع الصحابة",
+    "students": 1025,
+    "capacity": 1200
+  },
+  {
+    "name": "Shorouq and Amal",
+    "lat": 31.3462951584,
+    "lon": 34.2950463373,
+    "directorate": "Khanyounis West",
+    "grades": "G1-G9",
+    "address": "شارع البحر - بجوار نادي الخدمات",
+    "students": 1059,
+    "capacity": 1200
+  },
+  {
+    "name": "Safe Space",
+    "lat": 31.3519182,
+    "lon": 34.2546345,
+    "directorate": "Rafah",
+    "grades": "KG2-G9",
+    "address": "خانيونس - شمال مفترق فش فرش",
+    "students": 547,
+    "capacity": 1400
+  },
+  {
+    "name": "Salah Khalaf",
+    "lat": 31.5383959398,
+    "lon": 34.453830641,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "الشاطيء داخل مدرسة صلاح خلف",
+    "students": 551,
+    "capacity": 1600
+  },
+  {
+    "name": "Abdulrahman Bin Auf",
+    "lat": 31.5305358930294,
+    "lon": 34.4702750444412,
+    "directorate": "Gaza West",
+    "grades": "KG2-G10",
+    "address": "رمزون الشيخ رضوان تقاطع الجلاء",
+    "students": 984,
+    "capacity": 1200
+  },
+  {
+    "name": "Basheer Al-Rayyess",
+    "lat": 31.5187368654823,
+    "lon": 34.4508183002472,
+    "directorate": "Gaza West",
+    "grades": "KG2-G12",
+    "address": "شارع الوحدة بجوار عيادة الرمال",
+    "students": 882,
+    "capacity": 1200
+  },
+  {
+    "name": "Shafee - North",
+    "lat": 31.510782,
+    "lon": 34.457743,
+    "directorate": "Gaza East",
+    "grades": "G1-G9",
+    "address": "الزيتون ـ السامر ـ بالقرب من مسجد السوسي",
+    "students": 798,
+    "capacity": 1200
+  },
+  {
+    "name": "Ibrahim Al-Khalil",
+    "lat": 31.539774,
+    "lon": 34.493091,
+    "directorate": "Gaza North",
+    "grades": "nan",
+    "address": "الفالوجا - دوار الشهداء الستة",
+    "students": 0,
+    "capacity": 0
   }
 ]
