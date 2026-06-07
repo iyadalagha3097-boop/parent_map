@@ -1,43 +1,43 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>دليل أقرب مراكز التعلم</title>
+  <title>Find Nearby Learning Centres</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQAvXw09kG70I6GC3mTZ+RlNRIJ8Cfw=" crossorigin="" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
     <div>
-      <div class="eyebrow">دليل مراكز التعلم</div>
-      <h1>ابحث عن أقرب مركز تعلم</h1>
-      <p>اسمح باستخدام موقعك لعرض أقرب المراكز. سيتم استخدام موقعك على هاتفك فقط ولن يتم حفظه.</p>
+      <div class="eyebrow">Learning Centre Locator</div>
+      <h1>Find the nearest Learning Centre</h1>
+      <p>Allow location access to see nearby centres. Your location is used only on your phone and is not saved.</p>
     </div>
-    <button id="locateBtn" class="primary-btn">استخدم موقعي الحالي</button>
+    <button id="locateBtn" class="primary-btn">Use my location</button>
   </header>
 
   <main>
     <section class="panel status-panel">
-      <div id="statusText">اضغط على “استخدم موقعي الحالي” للبدء.</div>
+      <div id="statusText">Tap “Use my location” to start.</div>
     </section>
 
     <section class="panel filters">
       <label>
-        الصف
+        Grade
         <select id="gradeFilter">
-          <option value="">جميع الصفوف</option>
+          <option value="">All grades</option>
         </select>
       </label>
       <label>
-        المديرية
+        Directorate
         <select id="directorateFilter">
-          <option value="">جميع المديريات</option>
+          <option value="">All directorates</option>
         </select>
       </label>
       <label>
-        بحث
-        <input id="searchBox" type="search" placeholder="اسم المركز أو العنوان" />
+        Search
+        <input id="searchBox" type="search" placeholder="Name or address" />
       </label>
     </section>
 
@@ -46,7 +46,7 @@
     </section>
 
     <section class="list-header">
-      <h2>أقرب المراكز</h2>
+      <h2>Nearest centres</h2>
       <span id="countText"></span>
     </section>
     <section id="results" class="results"></section>
@@ -64,7 +64,7 @@
       <p class="address"></p>
       <p class="grades"></p>
       <div class="card-actions">
-        <a class="directions" target="_blank" rel="noopener">الاتجاهات</a>
+        <a class="directions" target="_blank" rel="noopener">Directions</a>
       </div>
     </article>
   </template>
