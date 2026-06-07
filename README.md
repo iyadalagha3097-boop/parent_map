@@ -41,3 +41,6 @@ The parent's GPS location is read by the browser after consent. Distance calcula
 3. Go to Settings > Pages.
 4. Select deploy from the main branch/root.
 5. Use the published HTTPS link to generate the QR code.
+
+
+Update note: The app now shows no LC results until the parent shares GPS location. After location is detected, it shows only the nearest centres that match the selected filters. Grade filters understand ranges such as KG2-G12, so selecting G1 will include an LC with grades KG2-G12.

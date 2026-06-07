@@ -4,6 +4,10 @@ let map;
 let userMarker;
 let lcLayer;
 
+// Only the nearest centres are shown after the parent shares location.
+// Change this number if you want to show more/less results.
+const NEAREST_LIMIT = 10;
+
 const statusText = document.getElementById('statusText');
 const locateBtn = document.getElementById('locateBtn');
 const gradeFilter = document.getElementById('gradeFilter');
@@ -46,39 +50,98 @@ function lcGrades(lc) {
   return String(lc.grades || '').trim();
 }
 
+function gradeToNumber(gradeText) {
+  const g = String(gradeText || '').trim().toUpperCase().replace(/\s+/g, '');
+  if (!g) return null;
+  if (g === 'KG2' || g === 'K2') return 0;
+  if (g === 'KG1' || g === 'K1') return -1;
+  const match = g.match(/^G(\d{1,2})$/) || g.match(/^GRADE(\d{1,2})$/) || g.match(/^(\d{1,2})$/);
+  if (match) return Number(match[1]);
+  return null;
+}
+
+function numberToGrade(n) {
+  if (n === -1) return 'KG1';
+  if (n === 0) return 'KG2';
+  return `G${n}`;
+}
+
+function extractGradeTokens(text) {
+  const matches = String(text || '').toUpperCase().match(/KG\s*\d|K\s*\d|G\s*\d{1,2}|GRADE\s*\d{1,2}|\b\d{1,2}\b/g) || [];
+  return matches
+    .map(token => token.replace(/\s+/g, '').replace(/^GRADE/, 'G').replace(/^K(\d)/, 'KG$1'))
+    .filter(Boolean);
+}
+
+function lcCoversGrade(lc, selectedGrade) {
+  if (!selectedGrade) return true;
+
+  const selectedNumber = gradeToNumber(selectedGrade);
+  if (selectedNumber === null) return true;
+
+  const text = lcGrades(lc);
+  const tokens = extractGradeTokens(text);
+  if (!tokens.length) return false;
+
+  const numbers = tokens.map(gradeToNumber).filter(n => n !== null);
+  if (!numbers.length) return false;
+
+  // Handles ranges such as KG2-G12, KG2 to G9, G1 - G4.
+  const looksLikeRange = /-|–|—|\bTO\b|\bUNTIL\b|\bTHROUGH\b|\bالى\b|\bإلى\b|\bلغاية\b/i.test(text);
+  if (looksLikeRange && numbers.length >= 2) {
+    const minGrade = Math.min(...numbers);
+    const maxGrade = Math.max(...numbers);
+    return selectedNumber >= minGrade && selectedNumber <= maxGrade;
+  }
+
+  // Handles comma/list values such as G1, G2, G3.
+  return numbers.includes(selectedNumber);
+}
+
 function matchesFilters(lc) {
   const grade = gradeFilter.value;
   const directorate = directorateFilter.value;
   const q = normalizeText(searchBox.value);
 
-  if (grade && !lcGrades(lc).toLowerCase().includes(grade.toLowerCase())) return false;
+  if (grade && !lcCoversGrade(lc, grade)) return false;
   if (directorate && String(lc.directorate || '') !== directorate) return false;
   if (q) {
-    const haystack = normalizeText(`${lc.name} ${lc.address} ${lc.directorate}`);
+    const haystack = normalizeText(`${lc.name} ${lc.address} ${lc.directorate} ${lc.grades}`);
     if (!haystack.includes(q)) return false;
   }
   return true;
 }
 
-function getFilteredSortedLCs() {
-  let items = lcs.filter(matchesFilters);
-  if (userLocation) {
-    items = items.map(lc => ({
+function getNearbyBaseLCs() {
+  if (!userLocation) return [];
+  return lcs
+    .map(lc => ({
       ...lc,
       distance_m: haversineMeters(userLocation.lat, userLocation.lon, lc.lat, lc.lon)
-    })).sort((a, b) => a.distance_m - b.distance_m);
-  }
-  return items;
+    }))
+    .sort((a, b) => a.distance_m - b.distance_m);
+}
+
+function getVisibleLCs() {
+  if (!userLocation) return [];
+  return getNearbyBaseLCs().filter(matchesFilters).slice(0, NEAREST_LIMIT);
 }
 
 function renderResults() {
-  const items = getFilteredSortedLCs();
-  const visible = userLocation ? items.slice(0, 10) : items.slice(0, 50);
   results.innerHTML = '';
-  countText.textContent = userLocation ? `${visible.length} closest shown` : `${visible.length} centres shown`;
+
+  if (!userLocation) {
+    countText.textContent = '';
+    renderMarkers([]);
+    results.innerHTML = '<div class="panel status-panel">Tap “Use my location” to show nearby Learning Centres.</div>';
+    return;
+  }
+
+  const visible = getVisibleLCs();
+  countText.textContent = `${visible.length} nearby centre(s) shown`;
 
   if (!visible.length) {
-    results.innerHTML = '<div class="panel status-panel">No centres match the selected filters.</div>';
+    results.innerHTML = '<div class="panel status-panel">No nearby centres match the selected filters.</div>';
     renderMarkers([]);
     return;
   }
@@ -109,7 +172,15 @@ function renderMarkers(items) {
   }
 
   items.forEach(lc => {
-    const marker = L.marker([lc.lat, lc.lon]).bindPopup(`<strong>${lc.name || 'Learning Centre'}</strong><br>${lc.address || ''}<br>${formatDistance(lc.distance_m)}`);
+    const popupHtml = `
+      <strong>${lc.name || 'Learning Centre'}</strong><br>
+      ${lc.directorate || ''}<br>
+      ${lc.address || ''}<br>
+      Grades: ${lc.grades || 'Not available'}<br>
+      Distance: ${formatDistance(lc.distance_m)}<br>
+      <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(lc.lat + ',' + lc.lon)}">Directions</a>
+    `;
+    const marker = L.marker([lc.lat, lc.lon]).bindPopup(popupHtml);
     lcLayer.addLayer(marker);
     bounds.push([lc.lat, lc.lon]);
   });
@@ -126,16 +197,19 @@ function populateFilters() {
     directorateFilter.appendChild(opt);
   });
 
-  const gradeSet = new Set();
+  const gradeNumbers = new Set();
   lcs.forEach(lc => {
-    const text = lcGrades(lc);
-    const matches = text.match(/KG\d|G\d{1,2}|Grade\s*\d{1,2}|\d{1,2}/gi) || [];
-    matches.forEach(g => gradeSet.add(g.toUpperCase().replace(/GRADE\s*/i, 'G')));
+    const tokens = extractGradeTokens(lcGrades(lc));
+    tokens.forEach(token => {
+      const n = gradeToNumber(token);
+      if (n !== null) gradeNumbers.add(n);
+    });
   });
-  [...gradeSet].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).forEach(g => {
+
+  [...gradeNumbers].sort((a, b) => a - b).forEach(n => {
     const opt = document.createElement('option');
-    opt.value = g;
-    opt.textContent = g;
+    opt.value = numberToGrade(n);
+    opt.textContent = numberToGrade(n);
     gradeFilter.appendChild(opt);
   });
 }
@@ -148,7 +222,7 @@ async function loadData() {
     .map(lc => ({ ...lc, lat: Number(lc.lat), lon: Number(lc.lon) }));
   populateFilters();
   renderResults();
-  statusText.textContent = `${lcs.length} Learning Centres loaded. Tap “Use my location” to find the nearest centres.`;
+  statusText.textContent = `${lcs.length} Learning Centres loaded. Tap “Use my location” to show nearby centres.`;
 }
 
 function useMyLocation() {
@@ -160,11 +234,11 @@ function useMyLocation() {
   navigator.geolocation.getCurrentPosition(
     pos => {
       userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-      statusText.textContent = 'Location detected. Showing nearest Learning Centres.';
+      statusText.textContent = `Location detected. Showing the nearest ${NEAREST_LIMIT} Learning Centres that match your filters.`;
       renderResults();
     },
     err => {
-      statusText.textContent = 'Location permission was not granted. You can still browse centres and use filters.';
+      statusText.textContent = 'Location permission was not granted. Nearby centres cannot be shown without location access.';
       console.warn(err);
     },
     { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }

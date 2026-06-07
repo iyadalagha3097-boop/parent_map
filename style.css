@@ -11,10 +11,9 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: Arial, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
-  direction: rtl;
 }
 .hero {
   padding: 22px 16px;
@@ -23,9 +22,9 @@ body {
   display: grid;
   gap: 16px;
 }
-.eyebrow { font-size: 13px; opacity: 0.9; font-weight: 700; letter-spacing: 0; }
-h1 { margin: 6px 0 8px; font-size: 26px; line-height: 1.25; }
-p { margin: 0; line-height: 1.65; }
+.eyebrow { font-size: 13px; opacity: 0.85; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+h1 { margin: 6px 0 8px; font-size: 26px; line-height: 1.15; }
+p { margin: 0; line-height: 1.45; }
 main { padding: 14px; max-width: 900px; margin: 0 auto; }
 .primary-btn {
   border: 0;
@@ -59,7 +58,6 @@ select, input {
   font-size: 15px;
   color: var(--text);
   background: white;
-  direction: rtl;
 }
 .map-wrap { height: 330px; border-radius: 18px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 16px; }
 #map { height: 100%; width: 100%; }
@@ -82,9 +80,7 @@ h3 { margin: 0 0 6px; font-size: 18px; }
   border-radius: 12px;
   font-weight: 700;
 }
-.popup-ar { direction: rtl; text-align: right; line-height: 1.6; }
 .leaflet-control-attribution { font-size: 10px; }
-.leaflet-popup-content { direction: rtl; text-align: right; }
 @media (min-width: 720px) {
   .hero { grid-template-columns: 1fr auto; align-items: center; padding: 28px; }
   .filters { grid-template-columns: 1fr 1fr 1.4fr; }
