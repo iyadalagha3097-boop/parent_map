@@ -34,8 +34,8 @@ function haversineMeters(lat1, lon1, lat2, lon2) {
 
 function formatDistance(meters) {
   if (meters == null) return '';
-  if (meters < 1000) return `${Math.round(meters)} m`;
-  return `${(meters / 1000).toFixed(1)} km`;
+  if (meters < 1000) return `${Math.round(meters)} متر`;
+  return `${(meters / 1000).toFixed(1)} كم`;
 }
 
 function normalizeText(value) {
@@ -75,21 +75,21 @@ function renderResults() {
   const items = getFilteredSortedLCs();
   const visible = userLocation ? items.slice(0, 10) : items.slice(0, 50);
   results.innerHTML = '';
-  countText.textContent = userLocation ? `${visible.length} closest shown` : `${visible.length} centres shown`;
+  countText.textContent = userLocation ? `يتم عرض أقرب ${visible.length} مراكز` : `يتم عرض ${visible.length} مركزاً`;
 
   if (!visible.length) {
-    results.innerHTML = '<div class="panel status-panel">No centres match the selected filters.</div>';
+    results.innerHTML = '<div class="panel status-panel">لا توجد مراكز مطابقة للفلاتر المحددة.</div>';
     renderMarkers([]);
     return;
   }
 
   visible.forEach(lc => {
     const node = cardTemplate.content.cloneNode(true);
-    node.querySelector('.lc-name').textContent = lc.name || 'Learning Centre';
+    node.querySelector('.lc-name').textContent = lc.name || 'مركز تعلم';
     node.querySelector('.lc-meta').textContent = lc.directorate || '';
     node.querySelector('.distance').textContent = formatDistance(lc.distance_m);
-    node.querySelector('.address').textContent = lc.address ? `Address: ${lc.address}` : 'Address not available';
-    node.querySelector('.grades').textContent = lc.grades ? `Grades: ${lc.grades}` : 'Grades not available';
+    node.querySelector('.address').textContent = lc.address ? `العنوان: ${lc.address}` : 'العنوان غير متوفر';
+    node.querySelector('.grades').textContent = lc.grades ? `الصفوف: ${lc.grades}` : 'الصفوف غير متوفرة';
     const directions = node.querySelector('.directions');
     directions.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(lc.lat + ',' + lc.lon)}`;
     results.appendChild(node);
@@ -104,12 +104,19 @@ function renderMarkers(items) {
 
   if (userLocation) {
     if (userMarker) map.removeLayer(userMarker);
-    userMarker = L.marker([userLocation.lat, userLocation.lon]).addTo(map).bindPopup('Your location');
+    userMarker = L.marker([userLocation.lat, userLocation.lon]).addTo(map).bindPopup('موقعك الحالي');
     bounds.push([userLocation.lat, userLocation.lon]);
   }
 
   items.forEach(lc => {
-    const marker = L.marker([lc.lat, lc.lon]).bindPopup(`<strong>${lc.name || 'Learning Centre'}</strong><br>${lc.address || ''}<br>${formatDistance(lc.distance_m)}`);
+    const popup = `
+      <div class="popup-ar">
+        <strong>${lc.name || 'مركز تعلم'}</strong><br>
+        ${lc.address || 'العنوان غير متوفر'}<br>
+        ${lc.grades ? 'الصفوف: ' + lc.grades + '<br>' : ''}
+        ${formatDistance(lc.distance_m)}
+      </div>`;
+    const marker = L.marker([lc.lat, lc.lon]).bindPopup(popup);
     lcLayer.addLayer(marker);
     bounds.push([lc.lat, lc.lon]);
   });
@@ -148,23 +155,23 @@ async function loadData() {
     .map(lc => ({ ...lc, lat: Number(lc.lat), lon: Number(lc.lon) }));
   populateFilters();
   renderResults();
-  statusText.textContent = `${lcs.length} Learning Centres loaded. Tap “Use my location” to find the nearest centres.`;
+  statusText.textContent = `تم تحميل ${lcs.length} مركز تعلم. اضغط على “استخدم موقعي الحالي” لعرض أقرب المراكز.`;
 }
 
 function useMyLocation() {
   if (!navigator.geolocation) {
-    statusText.textContent = 'Location is not supported by this browser.';
+    statusText.textContent = 'خدمة تحديد الموقع غير مدعومة في هذا المتصفح.';
     return;
   }
-  statusText.textContent = 'Requesting location permission...';
+  statusText.textContent = 'جاري طلب السماح بتحديد الموقع...';
   navigator.geolocation.getCurrentPosition(
     pos => {
       userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-      statusText.textContent = 'Location detected. Showing nearest Learning Centres.';
+      statusText.textContent = 'تم تحديد موقعك. يتم الآن عرض أقرب مراكز التعلم.';
       renderResults();
     },
     err => {
-      statusText.textContent = 'Location permission was not granted. You can still browse centres and use filters.';
+      statusText.textContent = 'لم يتم السماح باستخدام الموقع. يمكنك تصفح المراكز واستخدام الفلاتر.';
       console.warn(err);
     },
     { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
@@ -177,5 +184,5 @@ locateBtn.addEventListener('click', useMyLocation);
 initMap();
 loadData().catch(err => {
   console.error(err);
-  statusText.textContent = 'Could not load Learning Centre data. Please check lcs.json.';
+  statusText.textContent = 'تعذر تحميل بيانات مراكز التعلم. يرجى التأكد من ملف lcs.json.';
 });
