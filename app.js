@@ -98,6 +98,25 @@ function students(lc) {
   return getValue(lc, ['عدد الطلبة', 'students'], '');
 }
 
+function lat(lc) {
+  const value = Number(getValue(lc, ['lat', 'Latitude', 'خط العرض'], ''));
+  return Number.isFinite(value) ? value : null;
+}
+
+function lon(lc) {
+  const value = Number(getValue(lc, ['lon', 'lng', 'Longitude', 'خط الطول'], ''));
+  return Number.isFinite(value) ? value : null;
+}
+
+function hasCoordinates(lc) {
+  return lat(lc) !== null && lon(lc) !== null;
+}
+
+function googleMapsUrl(lc) {
+  if (!hasCoordinates(lc)) return '';
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(lat(lc) + ',' + lon(lc))}`;
+}
+
 function gradeToNumber(gradeText) {
   const g = String(gradeText || '').trim().toUpperCase().replace(/\s+/g, '');
   if (!g) return null;
@@ -269,6 +288,12 @@ function renderResults() {
     node.querySelector('.address').textContent = address(lc) ? `العنوان: ${address(lc)}` : 'العنوان غير متوفر';
     node.querySelector('.grades').textContent = grades(lc) ? `الصفوف: ${gradesArabicText(grades(lc))}` : 'الصفوف غير متوفرة';
     node.querySelector('.students').textContent = students(lc) ? `عدد الطلبة: ${students(lc)}` : '';
+    const directions = node.querySelector('.directions');
+    if (hasCoordinates(lc)) {
+      directions.href = googleMapsUrl(lc);
+    } else {
+      directions.remove();
+    }
     results.appendChild(node);
   });
 }

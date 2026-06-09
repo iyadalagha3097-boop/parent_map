@@ -62,6 +62,18 @@ h2 { margin: 0; font-size: 20px; }
 .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
 h3 { margin: 0 0 6px; font-size: 18px; }
 .lc-meta, .address, .grades, .students { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+.card-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+.directions {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: var(--primary);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
 .empty { padding: 16px; text-align: center; color: var(--muted); }
 .print-area { display: none; }
 @media (min-width: 720px) {
