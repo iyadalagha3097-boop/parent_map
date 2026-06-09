@@ -1,29 +1,49 @@
 let lcs = [];
 let userLocation = null;
-let map;
-let userMarker;
-let lcLayer;
-
-// Only the nearest centres are shown after the parent shares location.
-// Change this number if you want to show more/less results.
-const NEAREST_LIMIT = 10;
+let closestSchoolKey = null;
 
 const statusText = document.getElementById('statusText');
-const locateBtn = document.getElementById('locateBtn');
+const closestBtn = document.getElementById('closestBtn');
+const pdfBtn = document.getElementById('pdfBtn');
+const clearBtn = document.getElementById('clearBtn');
+const governorateFilter = document.getElementById('governorateFilter');
+const cityFilter = document.getElementById('cityFilter');
 const gradeFilter = document.getElementById('gradeFilter');
-const directorateFilter = document.getElementById('directorateFilter');
 const searchBox = document.getElementById('searchBox');
 const results = document.getElementById('results');
 const countText = document.getElementById('countText');
 const cardTemplate = document.getElementById('cardTemplate');
+const printArea = document.getElementById('printArea');
 
-function initMap() {
-  map = L.map('map').setView([31.45, 34.39], 10);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-  lcLayer = L.layerGroup().addTo(map);
+const CITY_KEYWORDS = [
+  ['جباليا', 'جباليا'], ['بيت لاهيا', 'بيت لاهيا'], ['بيت حانون', 'بيت حانون'], ['الصفطاوي', 'الصفطاوي'],
+  ['غزة', 'غزة'], ['التفاح', 'التفاح'], ['الدرج', 'الدرج'], ['الزيتون', 'الزيتون'], ['الصبرة', 'الصبرة'], ['الشجاعية', 'الشجاعية'], ['الرمال', 'الرمال'], ['تل الهوا', 'تل الهوا'], ['تل الهوى', 'تل الهوى'], ['النصر', 'النصر'], ['الشيخ رضوان', 'الشيخ رضوان'],
+  ['النصيرات', 'النصيرات'], ['البريج', 'البريج'], ['بريج', 'البريج'], ['المغازي', 'المغازي'], ['الزوايدة', 'الزوايدة'], ['دير البلح', 'دير البلح'], ['دير البalah', 'دير البلح'],
+  ['خان يونس', 'خان يونس'], ['خانيونس', 'خان يونس'], ['خانبونس', 'خان يونس'], ['المواصي', 'المواصي'], ['مواصي', 'المواصي'], ['القرارة', 'القرارة'], ['حمد', 'مدينة حمد'], ['الأمل', 'حي الأمل'], ['الامل', 'حي الأمل'], ['البلد', 'خان يونس البلد'],
+  ['رفح', 'رفح'], ['العطار', 'العطار'], ['بير 18', 'بير 18'], ['بئر 18', 'بئر 18'], ['بير 19', 'بير 19'], ['بئر 19', 'بئر 19'], ['بير 20', 'بير 20'], ['بئر 20', 'بئر 20'], ['بير 22', 'بير 22'], ['بئر 22', 'بئر 22']
+];
+
+function schoolKey(lc) {
+  return `${lc.name || ''}|${lc.lat}|${lc.lon}`;
+}
+
+function deriveGovernorate(lc) {
+  const d = String(lc.directorate || '').toLowerCase();
+  if (d.includes('north')) return 'شمال غزة';
+  if (d.includes('gaza')) return 'غزة';
+  if (d.includes('middle')) return 'دير البلح';
+  if (d.includes('khan') || d.includes('khanyounis')) return 'خان يونس';
+  if (d.includes('rafah')) return 'رفح';
+  return lc.governorate || 'غير محدد';
+}
+
+function deriveCity(lc) {
+  if (lc.city) return lc.city;
+  const text = `${lc.address || ''} ${lc.name || ''}`.toLowerCase();
+  for (const [keyword, city] of CITY_KEYWORDS) {
+    if (text.includes(keyword.toLowerCase())) return city;
+  }
+  return deriveGovernorate(lc);
 }
 
 function haversineMeters(lat1, lon1, lat2, lon2) {
@@ -38,16 +58,12 @@ function haversineMeters(lat1, lon1, lat2, lon2) {
 
 function formatDistance(meters) {
   if (meters == null) return '';
-  if (meters < 1000) return `${Math.round(meters)} m`;
-  return `${(meters / 1000).toFixed(1)} km`;
+  if (meters < 1000) return `${Math.round(meters)} متر`;
+  return `${(meters / 1000).toFixed(1)} كم`;
 }
 
 function normalizeText(value) {
   return String(value || '').toLowerCase().trim();
-}
-
-function lcGrades(lc) {
-  return String(lc.grades || '').trim();
 }
 
 function gradeToNumber(gradeText) {
@@ -56,8 +72,7 @@ function gradeToNumber(gradeText) {
   if (g === 'KG2' || g === 'K2') return 0;
   if (g === 'KG1' || g === 'K1') return -1;
   const match = g.match(/^G(\d{1,2})$/) || g.match(/^GRADE(\d{1,2})$/) || g.match(/^(\d{1,2})$/);
-  if (match) return Number(match[1]);
-  return null;
+  return match ? Number(match[1]) : null;
 }
 
 function numberToGrade(n) {
@@ -68,188 +83,213 @@ function numberToGrade(n) {
 
 function extractGradeTokens(text) {
   const matches = String(text || '').toUpperCase().match(/KG\s*\d|K\s*\d|G\s*\d{1,2}|GRADE\s*\d{1,2}|\b\d{1,2}\b/g) || [];
-  return matches
-    .map(token => token.replace(/\s+/g, '').replace(/^GRADE/, 'G').replace(/^K(\d)/, 'KG$1'))
-    .filter(Boolean);
+  return matches.map(token => token.replace(/\s+/g, '').replace(/^GRADE/, 'G').replace(/^K(\d)/, 'KG$1'));
 }
 
 function lcCoversGrade(lc, selectedGrade) {
   if (!selectedGrade) return true;
-
   const selectedNumber = gradeToNumber(selectedGrade);
   if (selectedNumber === null) return true;
-
-  const text = lcGrades(lc);
-  const tokens = extractGradeTokens(text);
-  if (!tokens.length) return false;
-
-  const numbers = tokens.map(gradeToNumber).filter(n => n !== null);
+  const text = String(lc.grades || '');
+  const numbers = extractGradeTokens(text).map(gradeToNumber).filter(n => n !== null);
   if (!numbers.length) return false;
-
-  // Handles ranges such as KG2-G12, KG2 to G9, G1 - G4.
-  const looksLikeRange = /-|–|—|\bTO\b|\bUNTIL\b|\bTHROUGH\b|\bالى\b|\bإلى\b|\bلغاية\b/i.test(text);
+  const looksLikeRange = /-|–|—|\bTO\b|\bUNTIL\b|\bTHROUGH\b|الى|إلى|لغاية/i.test(text);
   if (looksLikeRange && numbers.length >= 2) {
-    const minGrade = Math.min(...numbers);
-    const maxGrade = Math.max(...numbers);
-    return selectedNumber >= minGrade && selectedNumber <= maxGrade;
+    return selectedNumber >= Math.min(...numbers) && selectedNumber <= Math.max(...numbers);
   }
-
-  // Handles comma/list values such as G1, G2, G3.
   return numbers.includes(selectedNumber);
 }
 
 function matchesFilters(lc) {
+  const gov = governorateFilter.value;
+  const city = cityFilter.value;
   const grade = gradeFilter.value;
-  const directorate = directorateFilter.value;
   const q = normalizeText(searchBox.value);
-
+  if (gov && lc.governorate !== gov) return false;
+  if (city && lc.city !== city) return false;
   if (grade && !lcCoversGrade(lc, grade)) return false;
-  if (directorate && String(lc.directorate || '') !== directorate) return false;
   if (q) {
-    const haystack = normalizeText(`${lc.name} ${lc.address} ${lc.directorate} ${lc.grades}`);
+    const haystack = normalizeText(`${lc.name} ${lc.address} ${lc.directorate} ${lc.governorate} ${lc.city} ${lc.grades}`);
     if (!haystack.includes(q)) return false;
   }
   return true;
 }
 
-function getNearbyBaseLCs() {
-  if (!userLocation) return [];
-  return lcs
-    .map(lc => ({
+function visibleLCs() {
+  let items = lcs.filter(matchesFilters);
+  if (userLocation) {
+    items = items.map(lc => ({
       ...lc,
       distance_m: haversineMeters(userLocation.lat, userLocation.lon, lc.lat, lc.lon)
-    }))
-    .sort((a, b) => a.distance_m - b.distance_m);
+    })).sort((a, b) => (a.distance_m ?? Infinity) - (b.distance_m ?? Infinity));
+  } else {
+    items = items.sort((a, b) => a.governorate.localeCompare(b.governorate, 'ar') || a.city.localeCompare(b.city, 'ar') || a.name.localeCompare(b.name));
+  }
+  return items;
 }
 
-function getVisibleLCs() {
-  if (!userLocation) return [];
-  return getNearbyBaseLCs().filter(matchesFilters).slice(0, NEAREST_LIMIT);
+function option(value, text) {
+  const opt = document.createElement('option');
+  opt.value = value;
+  opt.textContent = text;
+  return opt;
+}
+
+function populateGovernorates() {
+  governorateFilter.querySelectorAll('option:not(:first-child)').forEach(o => o.remove());
+  [...new Set(lcs.map(lc => lc.governorate).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'))
+    .forEach(g => governorateFilter.appendChild(option(g, g)));
+}
+
+function populateCities() {
+  const selectedGov = governorateFilter.value;
+  cityFilter.querySelectorAll('option:not(:first-child)').forEach(o => o.remove());
+  const cities = lcs
+    .filter(lc => !selectedGov || lc.governorate === selectedGov)
+    .map(lc => lc.city)
+    .filter(Boolean);
+  [...new Set(cities)].sort((a, b) => a.localeCompare(b, 'ar'))
+    .forEach(c => cityFilter.appendChild(option(c, c)));
+}
+
+function populateGrades() {
+  const gradeNumbers = new Set();
+  lcs.forEach(lc => extractGradeTokens(lc.grades).forEach(token => {
+    const n = gradeToNumber(token);
+    if (n !== null) gradeNumbers.add(n);
+  }));
+  [...gradeNumbers].sort((a, b) => a - b).forEach(n => gradeFilter.appendChild(option(numberToGrade(n), numberToGrade(n))));
 }
 
 function renderResults() {
   results.innerHTML = '';
+  const items = visibleLCs();
+  countText.textContent = `${items.length} مركز`;
 
-  if (!userLocation) {
-    countText.textContent = '';
-    renderMarkers([]);
-    results.innerHTML = '<div class="panel status-panel">Tap “Use my location” to show nearby Learning Centres.</div>';
+  if (!items.length) {
+    results.innerHTML = '<div class="panel empty">لا توجد مراكز مطابقة للفلاتر المختارة.</div>';
     return;
   }
 
-  const visible = getVisibleLCs();
-  countText.textContent = `${visible.length} nearby centre(s) shown`;
-
-  if (!visible.length) {
-    results.innerHTML = '<div class="panel status-panel">No nearby centres match the selected filters.</div>';
-    renderMarkers([]);
-    return;
-  }
-
-  visible.forEach(lc => {
+  items.forEach(lc => {
     const node = cardTemplate.content.cloneNode(true);
-    node.querySelector('.lc-name').textContent = lc.name || 'Learning Centre';
-    node.querySelector('.lc-meta').textContent = lc.directorate || '';
-    node.querySelector('.distance').textContent = formatDistance(lc.distance_m);
-    node.querySelector('.address').textContent = lc.address ? `Address: ${lc.address}` : 'Address not available';
-    node.querySelector('.grades').textContent = lc.grades ? `Grades: ${lc.grades}` : 'Grades not available';
+    const card = node.querySelector('.card');
+    if (schoolKey(lc) === closestSchoolKey) card.classList.add('closest');
+    node.querySelector('.lc-name').textContent = lc.name || 'مركز تعليم';
+    node.querySelector('.lc-meta').textContent = `${lc.governorate} - ${lc.city}`;
+    node.querySelector('.distance').textContent = lc.distance_m == null ? '' : formatDistance(lc.distance_m);
+    node.querySelector('.address').textContent = lc.address && lc.address !== 'nan' ? `العنوان: ${lc.address}` : 'العنوان غير متوفر';
+    node.querySelector('.grades').textContent = lc.grades ? `الصفوف: ${lc.grades}` : 'الصفوف غير متوفرة';
+    node.querySelector('.students').textContent = lc.students ? `عدد الطلبة: ${lc.students}` : '';
     const directions = node.querySelector('.directions');
     directions.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(lc.lat + ',' + lc.lon)}`;
     results.appendChild(node);
   });
-
-  renderMarkers(visible);
 }
 
-function renderMarkers(items) {
-  lcLayer.clearLayers();
-  const bounds = [];
-
-  if (userLocation) {
-    if (userMarker) map.removeLayer(userMarker);
-    userMarker = L.marker([userLocation.lat, userLocation.lon]).addTo(map).bindPopup('Your location');
-    bounds.push([userLocation.lat, userLocation.lon]);
+function findClosestSchool() {
+  if (!navigator.geolocation) {
+    statusText.textContent = 'المتصفح لا يدعم تحديد الموقع.';
+    return;
   }
-
-  items.forEach(lc => {
-    const popupHtml = `
-      <strong>${lc.name || 'Learning Centre'}</strong><br>
-      ${lc.directorate || ''}<br>
-      ${lc.address || ''}<br>
-      Grades: ${lc.grades || 'Not available'}<br>
-      Distance: ${formatDistance(lc.distance_m)}<br>
-      <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(lc.lat + ',' + lc.lon)}">Directions</a>
-    `;
-    const marker = L.marker([lc.lat, lc.lon]).bindPopup(popupHtml);
-    lcLayer.addLayer(marker);
-    bounds.push([lc.lat, lc.lon]);
-  });
-
-  if (bounds.length) map.fitBounds(bounds, { padding: [35, 35], maxZoom: 15 });
+  statusText.textContent = 'يرجى السماح باستخدام الموقع لتحديد أقرب مركز...';
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+      const items = visibleLCs();
+      if (!items.length) {
+        statusText.textContent = 'لم يتم العثور على مركز مطابق للفلاتر الحالية بالقرب من موقعك.';
+        renderResults();
+        return;
+      }
+      closestSchoolKey = schoolKey(items[0]);
+      statusText.textContent = `أقرب مركز مطابق للفلاتر الحالية هو: ${items[0].name} (${formatDistance(items[0].distance_m)}).`;
+      renderResults();
+      window.scrollTo({ top: document.querySelector('.list-header').offsetTop - 10, behavior: 'smooth' });
+    },
+    () => { statusText.textContent = 'لم يتم السماح باستخدام الموقع. يمكنك اختيار المحافظة والمدينة يدوياً.'; },
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
+  );
 }
 
-function populateFilters() {
-  const directorates = [...new Set(lcs.map(lc => lc.directorate).filter(Boolean))].sort();
-  directorates.forEach(d => {
-    const opt = document.createElement('option');
-    opt.value = d;
-    opt.textContent = d;
-    directorateFilter.appendChild(opt);
-  });
+function buildPrintArea() {
+  const items = visibleLCs();
+  const filters = [
+    governorateFilter.value ? `المحافظة: ${governorateFilter.value}` : 'كل المحافظات',
+    cityFilter.value ? `المدينة: ${cityFilter.value}` : 'كل المدن / المناطق',
+    gradeFilter.value ? `الصف: ${gradeFilter.value}` : 'كل الصفوف',
+    searchBox.value ? `بحث: ${searchBox.value}` : ''
+  ].filter(Boolean).join(' | ');
 
-  const gradeNumbers = new Set();
-  lcs.forEach(lc => {
-    const tokens = extractGradeTokens(lcGrades(lc));
-    tokens.forEach(token => {
-      const n = gradeToNumber(token);
-      if (n !== null) gradeNumbers.add(n);
-    });
-  });
+  const rows = items.map((lc, i) => `
+    <tr>
+      <td>${i + 1}</td>
+      <td>${escapeHtml(lc.name)}</td>
+      <td>${escapeHtml(lc.governorate)}</td>
+      <td>${escapeHtml(lc.city)}</td>
+      <td>${escapeHtml(lc.address && lc.address !== 'nan' ? lc.address : '')}</td>
+      <td>${escapeHtml(lc.grades || '')}</td>
+      <td>${lc.distance_m == null ? '' : escapeHtml(formatDistance(lc.distance_m))}</td>
+    </tr>
+  `).join('');
 
-  [...gradeNumbers].sort((a, b) => a - b).forEach(n => {
-    const opt = document.createElement('option');
-    opt.value = numberToGrade(n);
-    opt.textContent = numberToGrade(n);
-    gradeFilter.appendChild(opt);
-  });
+  printArea.innerHTML = `
+    <h1>قائمة مراكز التعليم</h1>
+    <p>${escapeHtml(filters)}</p>
+    <p>عدد المراكز: ${items.length}</p>
+    <table>
+      <thead><tr><th>#</th><th>المركز</th><th>المحافظة</th><th>المدينة / المنطقة</th><th>العنوان</th><th>الصفوف</th><th>المسافة</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
+}
+
+function clearFilters() {
+  governorateFilter.value = '';
+  cityFilter.value = '';
+  gradeFilter.value = '';
+  searchBox.value = '';
+  closestSchoolKey = null;
+  populateCities();
+  renderResults();
 }
 
 async function loadData() {
   const response = await fetch('lcs.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('Could not load lcs.json');
   const data = await response.json();
-  lcs = data.filter(lc => Number.isFinite(Number(lc.lat)) && Number.isFinite(Number(lc.lon)))
-    .map(lc => ({ ...lc, lat: Number(lc.lat), lon: Number(lc.lon) }));
-  populateFilters();
+  lcs = data
+    .filter(lc => Number.isFinite(Number(lc.lat)) && Number.isFinite(Number(lc.lon)))
+    .map(lc => ({
+      ...lc,
+      lat: Number(lc.lat),
+      lon: Number(lc.lon),
+      governorate: lc.governorate || deriveGovernorate(lc),
+      city: lc.city || deriveCity(lc)
+    }));
+  populateGovernorates();
+  populateCities();
+  populateGrades();
   renderResults();
-  statusText.textContent = `${lcs.length} Learning Centres loaded. Tap “Use my location” to show nearby centres.`;
+  statusText.textContent = `تم تحميل ${lcs.length} مركز. يمكن اختيار المحافظة والمدينة أو استخدام زر أقرب مركز.`;
 }
 
-function useMyLocation() {
-  if (!navigator.geolocation) {
-    statusText.textContent = 'Location is not supported by this browser.';
-    return;
-  }
-  statusText.textContent = 'Requesting location permission...';
-  navigator.geolocation.getCurrentPosition(
-    pos => {
-      userLocation = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-      statusText.textContent = `Location detected. Showing the nearest ${NEAREST_LIMIT} Learning Centres that match your filters.`;
-      renderResults();
-    },
-    err => {
-      statusText.textContent = 'Location permission was not granted. Nearby centres cannot be shown without location access.';
-      console.warn(err);
-    },
-    { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
-  );
-}
+governorateFilter.addEventListener('change', () => {
+  cityFilter.value = '';
+  closestSchoolKey = null;
+  populateCities();
+  renderResults();
+});
+[cityFilter, gradeFilter, searchBox].forEach(el => el.addEventListener('input', () => { closestSchoolKey = null; renderResults(); }));
+closestBtn.addEventListener('click', findClosestSchool);
+pdfBtn.addEventListener('click', () => { buildPrintArea(); window.print(); });
+clearBtn.addEventListener('click', clearFilters);
 
-locateBtn.addEventListener('click', useMyLocation);
-[gradeFilter, directorateFilter, searchBox].forEach(el => el.addEventListener('input', renderResults));
-
-initMap();
 loadData().catch(err => {
   console.error(err);
-  statusText.textContent = 'Could not load Learning Centre data. Please check lcs.json.';
+  statusText.textContent = 'تعذر تحميل بيانات المراكز. تأكد من وجود ملف lcs.json.';
 });
