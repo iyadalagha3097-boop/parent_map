@@ -3,22 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>قائمة مراكز التعليم</title>
+  <title>دليل تسجيل البستان والتمهيدي</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
     <div>
       <div class="eyebrow">دليل مراكز التعليم</div>
-      <h1>ابحث عن أقرب مركز تعليم مناسب لطفلك</h1>
-      <p>اختر المحافظة والمدينة، أو اضغط على زر أقرب مركز لاستخدام موقعك الحالي. لا يتم حفظ موقعك أو إرساله لأي جهة.</p>
+      <h1>دليل تسجيل البستان والتمهيدي</h1>
+      <p>يعرض الموقع افتراضياً المراكز التي تبدأ بصفوف البستان أو التمهيدي. يمكن اختيار المحافظة أو المدينة أو الصف الدراسي لتصفية القائمة.</p>
     </div>
   </header>
 
   <main>
     <section class="quick-actions" aria-label="إجراءات سريعة">
-      <button id="closestBtn" class="primary-btn">اعرض أقرب مركز لموقعي</button>
-      <button id="pdfBtn" class="secondary-btn">تحميل القائمة PDF</button>
+      <button id="pdfBtn" class="primary-btn">تحميل القائمة PDF</button>
       <button id="clearBtn" class="secondary-btn">مسح الفلاتر</button>
     </section>
 
@@ -42,6 +41,7 @@
       <label>
         الصف الدراسي
         <select id="gradeFilter">
+          <option value="KG_START" selected>البستان والتمهيدي</option>
           <option value="">كل الصفوف</option>
         </select>
       </label>
@@ -66,14 +66,10 @@
           <h3 class="lc-name"></h3>
           <p class="lc-meta"></p>
         </div>
-        <span class="distance"></span>
       </div>
       <p class="address"></p>
       <p class="grades"></p>
       <p class="students"></p>
-      <div class="card-actions">
-        <a class="directions" target="_blank" rel="noopener">الاتجاهات عبر Google Maps</a>
-      </div>
     </article>
   </template>
 

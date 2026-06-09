@@ -6,7 +6,6 @@
   --border: #d8e0ea;
   --primary: #1261d6;
   --primary-dark: #0b469e;
-  --soft: #eaf2ff;
 }
 
 * { box-sizing: border-box; }
@@ -60,19 +59,15 @@ h2 { margin: 0; font-size: 20px; }
 #countText { color: var(--muted); font-size: 13px; }
 .results { display: grid; gap: 12px; padding-bottom: 28px; }
 .card { padding: 14px; }
-.card.closest { border: 2px solid var(--primary); background: var(--soft); }
 .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
 h3 { margin: 0 0 6px; font-size: 18px; }
 .lc-meta, .address, .grades, .students { color: var(--muted); font-size: 14px; margin-top: 6px; }
-.distance { white-space: nowrap; color: var(--primary); font-weight: 800; font-size: 15px; }
-.card-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
-.directions { display: inline-block; text-decoration: none; color: white; background: var(--primary); padding: 10px 14px; border-radius: 12px; font-weight: 700; }
 .empty { padding: 16px; text-align: center; color: var(--muted); }
 .print-area { display: none; }
 @media (min-width: 720px) {
   .hero { padding: 28px; }
-  .quick-actions { grid-template-columns: 1fr 1fr 1fr; }
-  .filters { grid-template-columns: 1fr 1fr; }
+  .quick-actions { grid-template-columns: 1fr 1fr; }
+  .filters { grid-template-columns: 1fr 1fr 1fr; }
   .search-label { grid-column: 1 / -1; }
 }
 @media print {
