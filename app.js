@@ -158,8 +158,20 @@ function extractGradeNumbers(text) {
 function gradesStartWithKg(lc) {
   const text = grades(lc).trim();
   const compact = text.toUpperCase().replace(/\s+/g, '');
-  return compact.startsWith('KG1') || compact.startsWith('K1') || compact.startsWith('KG2') || compact.startsWith('K2') ||
-    text.startsWith('بستان') || text.startsWith('تمهيدي');
+
+  return (
+    compact.startsWith('KG1') ||
+    compact.startsWith('K1') ||
+    compact.startsWith('KG2') ||
+    compact.startsWith('K2') ||
+    compact.startsWith('G1') ||
+    text.startsWith('بستان') ||
+    text.startsWith('تمهيدي') ||
+    text.startsWith('أول') ||
+    text.startsWith('اول') ||
+    text.startsWith('الأول') ||
+    text.startsWith('الاول')
+  );
 }
 
 function lcCoversGrade(lc, selectedGrade) {
@@ -303,7 +315,7 @@ function buildPrintArea() {
   const filters = [
     governorateFilter.value ? `المحافظة: ${governorateFilter.value}` : 'كل المحافظات',
     cityFilter.value ? `المدينة: ${cityFilter.value}` : 'كل المدن / المناطق',
-    gradeFilter.value === 'KG_START' ? 'الصف الدراسي: البستان والتمهيدي' : (gradeFilter.value ? `الصف الدراسي: ${gradeArabicLabel(gradeFilter.value)}` : 'كل الصفوف'),
+    gradeFilter.value === 'KG_START' ? 'الصف الدراسي: البستان والتمهيدي والأول' : (gradeFilter.value ? `الصف الدراسي: ${gradeArabicLabel(gradeFilter.value)}` : 'كل الصفوف'),
     searchBox.value ? `بحث: ${searchBox.value}` : ''
   ].filter(Boolean).join(' | ');
 
