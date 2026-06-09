@@ -8,6 +8,7 @@ const pdfBtn = document.getElementById('pdfBtn');
 const clearBtn = document.getElementById('clearBtn');
 const governorateFilter = document.getElementById('governorateFilter');
 const cityFilter = document.getElementById('cityFilter');
+const gradeFilter = document.getElementById('gradeFilter');
 const searchBox = document.getElementById('searchBox');
 const results = document.getElementById('results');
 const countText = document.getElementById('countText');
@@ -21,6 +22,78 @@ const CITY_KEYWORDS = [
   ['خان يونس', 'خان يونس'], ['خانيونس', 'خان يونس'], ['خانبونس', 'خان يونس'], ['المواصي', 'المواصي'], ['مواصي', 'المواصي'], ['القرارة', 'القرارة'], ['حمد', 'مدينة حمد'], ['الأمل', 'حي الأمل'], ['الامل', 'حي الأمل'], ['البلد', 'خان يونس البلد'],
   ['رفح', 'رفح'], ['العطار', 'العطار'], ['بير 18', 'بير 18'], ['بئر 18', 'بئر 18'], ['بير 19', 'بير 19'], ['بئر 19', 'بئر 19'], ['بير 20', 'بير 20'], ['بئر 20', 'بئر 20'], ['بير 22', 'بير 22'], ['بئر 22', 'بئر 22']
 ];
+
+
+const GRADE_AR_LABELS = {
+  'KG1': 'بستان',
+  'KG2': 'تمهيدي',
+  'G1': 'الأول',
+  'G2': 'الثاني',
+  'G3': 'الثالث',
+  'G4': 'الرابع',
+  'G5': 'الخامس',
+  'G6': 'السادس',
+  'G7': 'السابع',
+  'G8': 'الثامن',
+  'G9': 'التاسع',
+  'G10': 'العاشر',
+  'G11': 'الحادي عشر',
+  'G12': 'الثاني عشر'
+};
+
+function gradeToNumber(gradeText) {
+  const g = String(gradeText || '').trim().toUpperCase().replace(/\s+/g, '');
+  if (!g) return null;
+  if (g === 'KG2' || g === 'K2') return 0;
+  if (g === 'KG1' || g === 'K1') return -1;
+  const match = g.match(/^G(\d{1,2})$/) || g.match(/^GRADE(\d{1,2})$/) || g.match(/^(\d{1,2})$/);
+  if (match) return Number(match[1]);
+  return null;
+}
+
+function numberToGrade(n) {
+  if (n === -1) return 'KG1';
+  if (n === 0) return 'KG2';
+  return `G${n}`;
+}
+
+function gradeArabicLabel(code) {
+  return GRADE_AR_LABELS[code] || code;
+}
+
+function extractGradeTokens(text) {
+  const matches = String(text || '').toUpperCase().match(/KG\s*\d|K\s*\d|G\s*\d{1,2}|GRADE\s*\d{1,2}|\b\d{1,2}\b/g) || [];
+  return matches
+    .map(token => token.replace(/\s+/g, '').replace(/^GRADE/, 'G').replace(/^K(\d)/, 'KG$1'))
+    .filter(Boolean);
+}
+
+function lcCoversGrade(lc, selectedGrade) {
+  if (!selectedGrade) return true;
+  const selectedNumber = gradeToNumber(selectedGrade);
+  if (selectedNumber === null) return true;
+  const text = String(lc.grades || '').trim();
+  const tokens = extractGradeTokens(text);
+  if (!tokens.length) return false;
+  const numbers = tokens.map(gradeToNumber).filter(n => n !== null);
+  if (!numbers.length) return false;
+  const looksLikeRange = /-|–|—|\bTO\b|\bUNTIL\b|\bTHROUGH\b|الى|إلى|لغاية/i.test(text);
+  if (looksLikeRange && numbers.length >= 2) {
+    const minGrade = Math.min(...numbers);
+    const maxGrade = Math.max(...numbers);
+    return selectedNumber >= minGrade && selectedNumber <= maxGrade;
+  }
+  return numbers.includes(selectedNumber);
+}
+
+function gradesArabicText(text) {
+  const original = String(text || '').trim();
+  if (!original) return '';
+  return original.replace(/KG\s*1|K\s*1|KG\s*2|K\s*2|G\s*\d{1,2}|GRADE\s*\d{1,2}/gi, token => {
+    const clean = token.toUpperCase().replace(/\s+/g, '').replace(/^GRADE/, 'G').replace(/^K(\d)/, 'KG$1');
+    return gradeArabicLabel(clean);
+  });
+}
 
 function displayName(lc) {
   return lc.name_ar || lc.name || 'مركز تعليم';
@@ -72,9 +145,11 @@ function normalizeText(value) {
 function matchesFilters(lc) {
   const gov = governorateFilter.value;
   const city = cityFilter.value;
+  const grade = gradeFilter.value;
   const q = normalizeText(searchBox.value);
   if (gov && lc.governorate !== gov) return false;
   if (city && lc.city !== city) return false;
+  if (grade && !lcCoversGrade(lc, grade)) return false;
   if (q) {
     const haystack = normalizeText(`${lc.name_ar || ''} ${lc.name || ''} ${lc.address} ${lc.directorate} ${lc.governorate} ${lc.city} ${lc.grades}`);
     if (!haystack.includes(q)) return false;
@@ -119,6 +194,21 @@ function populateCities() {
     .forEach(c => cityFilter.appendChild(option(c, c)));
 }
 
+function populateGrades() {
+  gradeFilter.querySelectorAll('option:not(:first-child)').forEach(o => o.remove());
+  const gradeNumbers = new Set();
+  lcs.forEach(lc => {
+    extractGradeTokens(lc.grades).forEach(token => {
+      const n = gradeToNumber(token);
+      if (n !== null) gradeNumbers.add(n);
+    });
+  });
+  [...gradeNumbers].sort((a, b) => a - b).forEach(n => {
+    const code = numberToGrade(n);
+    gradeFilter.appendChild(option(code, gradeArabicLabel(code)));
+  });
+}
+
 function renderResults() {
   results.innerHTML = '';
   const items = visibleLCs();
@@ -137,7 +227,7 @@ function renderResults() {
     node.querySelector('.lc-meta').textContent = `${lc.governorate} - ${lc.city}`;
     node.querySelector('.distance').textContent = lc.distance_m == null ? '' : formatDistance(lc.distance_m);
     node.querySelector('.address').textContent = lc.address && lc.address !== 'nan' ? `العنوان: ${lc.address}` : 'العنوان غير متوفر';
-    node.querySelector('.grades').textContent = lc.grades ? `الصفوف: ${lc.grades}` : 'الصفوف غير متوفرة';
+    node.querySelector('.grades').textContent = lc.grades ? `الصفوف: ${gradesArabicText(lc.grades)}` : 'الصفوف غير متوفرة';
     node.querySelector('.students').textContent = lc.students ? `عدد الطلبة: ${lc.students}` : '';
     const directions = node.querySelector('.directions');
     directions.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(lc.lat + ',' + lc.lon)}`;
@@ -175,6 +265,7 @@ function buildPrintArea() {
   const filters = [
     governorateFilter.value ? `المحافظة: ${governorateFilter.value}` : 'كل المحافظات',
     cityFilter.value ? `المدينة: ${cityFilter.value}` : 'كل المدن / المناطق',
+    gradeFilter.value ? `الصف الدراسي: ${gradeArabicLabel(gradeFilter.value)}` : 'كل الصفوف',
     searchBox.value ? `بحث: ${searchBox.value}` : ''
   ].filter(Boolean).join(' | ');
 
@@ -185,7 +276,7 @@ function buildPrintArea() {
       <td>${escapeHtml(lc.governorate)}</td>
       <td>${escapeHtml(lc.city)}</td>
       <td>${escapeHtml(lc.address && lc.address !== 'nan' ? lc.address : '')}</td>
-      <td>${escapeHtml(lc.grades || '')}</td>
+      <td>${escapeHtml(gradesArabicText(lc.grades) || '')}</td>
       <td>${lc.distance_m == null ? '' : escapeHtml(formatDistance(lc.distance_m))}</td>
     </tr>
   `).join('');
@@ -208,6 +299,7 @@ function escapeHtml(value) {
 function clearFilters() {
   governorateFilter.value = '';
   cityFilter.value = '';
+  gradeFilter.value = '';
   searchBox.value = '';
   closestSchoolKey = null;
   populateCities();
@@ -229,6 +321,7 @@ async function loadData() {
     }));
   populateGovernorates();
   populateCities();
+  populateGrades();
   renderResults();
   statusText.textContent = `تم تحميل ${lcs.length} مركز. يمكن اختيار المحافظة والمدينة أو استخدام زر أقرب مركز.`;
 }
@@ -239,7 +332,7 @@ governorateFilter.addEventListener('change', () => {
   populateCities();
   renderResults();
 });
-[cityFilter, searchBox].forEach(el => el.addEventListener('input', () => { closestSchoolKey = null; renderResults(); }));
+[cityFilter, gradeFilter, searchBox].forEach(el => el.addEventListener('input', () => { closestSchoolKey = null; renderResults(); }));
 closestBtn.addEventListener('click', findClosestSchool);
 pdfBtn.addEventListener('click', () => { buildPrintArea(); window.print(); });
 clearBtn.addEventListener('click', clearFilters);
