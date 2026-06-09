@@ -374,45 +374,26 @@ function buildPrintArea() {
   printArea.innerHTML = pageHtml;
 }
 
-async function downloadPdf() {
-  if (!window.html2canvas || !window.jspdf) {
-    statusText.textContent = 'تعذر إنشاء ملف PDF. تأكد من اتصال الإنترنت ثم حاول مرة أخرى.';
-    return;
-  }
-
+function downloadPdf() {
   const oldText = pdfBtn.textContent;
   pdfBtn.disabled = true;
-  pdfBtn.textContent = 'جاري إنشاء PDF...';
-  statusText.textContent = 'جاري إنشاء ملف PDF...';
+  pdfBtn.textContent = 'جاري تجهيز القائمة...';
+  statusText.textContent = 'جاري تجهيز القائمة للطباعة أو الحفظ كملف PDF...';
 
   try {
     buildPrintArea();
-    printArea.classList.add('rendering-pdf');
-    await new Promise(resolve => setTimeout(resolve, 250));
 
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-    const pages = [...printArea.querySelectorAll('.pdf-page')];
-
-    for (let i = 0; i < pages.length; i++) {
-      const canvas = await html2canvas(pages[i], {
-        scale: 2,
-        backgroundColor: '#ffffff',
-        useCORS: true,
-        allowTaint: true
-      });
-      const imgData = canvas.toDataURL('image/jpeg', 0.95);
-      if (i > 0) pdf.addPage();
-      pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
-    }
-
-    pdf.save('دليل_مراكز_التعليم.pdf');
-    statusText.textContent = `تم إنشاء ملف PDF لعدد ${visibleLCs().length} مركز.`;
+    // Use the browser print dialog instead of online PDF libraries.
+    // This works without internet access and avoids CDN loading errors.
+    setTimeout(() => {
+      window.print();
+      statusText.textContent = 'اختر حفظ كملف PDF من نافذة الطباعة. إذا ظهرت معلومات التاريخ أو الرابط، ألغِ خيار Headers and footers من إعدادات الطباعة.';
+      pdfBtn.disabled = false;
+      pdfBtn.textContent = oldText;
+    }, 150);
   } catch (err) {
     console.error(err);
-    statusText.textContent = 'حدث خطأ أثناء إنشاء ملف PDF. يرجى المحاولة مرة أخرى.';
-  } finally {
-    printArea.classList.remove('rendering-pdf');
+    statusText.textContent = 'حدث خطأ أثناء تجهيز القائمة. يرجى المحاولة مرة أخرى.';
     pdfBtn.disabled = false;
     pdfBtn.textContent = oldText;
   }

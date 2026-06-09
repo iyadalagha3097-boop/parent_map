@@ -171,12 +171,121 @@ h3 { margin: 0 0 6px; font-size: 18px; }
   .search-label { grid-column: 1 / -1; }
 }
 @media print {
-  body { background: white; }
-  .hero, main { display: none !important; }
-  .print-area { display: block; padding: 16px; color: #111; }
-  .print-area h1 { color: #111; font-size: 20px; margin-bottom: 8px; }
-  .print-area p { color: #333; margin-bottom: 12px; }
-  table { width: 100%; border-collapse: collapse; font-size: 11px; direction: rtl; }
-  th, td { border: 1px solid #999; padding: 6px; vertical-align: top; }
-  th { background: #eee; }
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero, main {
+    display: none !important;
+  }
+
+  .print-area {
+    display: block !important;
+    color: #111;
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pdf-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 12mm;
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .pdf-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .pdf-header {
+    display: grid;
+    grid-template-columns: 1fr 38mm;
+    gap: 8mm;
+    align-items: start;
+    margin-bottom: 5mm;
+  }
+
+  .pdf-title-block h1,
+  .pdf-page-title {
+    color: #111;
+    font-size: 18pt;
+    margin: 0 0 4mm;
+  }
+
+  .pdf-instruction {
+    color: #222;
+    font-size: 11pt;
+    line-height: 1.6;
+    margin: 0 0 2mm;
+  }
+
+  .pdf-link {
+    color: #111;
+    direction: ltr;
+    text-align: right;
+    font-size: 10pt;
+    margin-top: 2mm;
+  }
+
+  .pdf-qr-block {
+    text-align: center;
+  }
+
+  .pdf-qr {
+    width: 35mm;
+    height: 35mm;
+    display: block;
+    margin: 0 auto;
+    padding: 2mm;
+    background: white;
+  }
+
+  .pdf-filters,
+  .pdf-count {
+    color: #333;
+    font-size: 10pt;
+    margin: 2mm 0;
+  }
+
+  .pdf-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+    direction: rtl;
+    margin-top: 4mm;
+  }
+
+  .pdf-page th,
+  .pdf-page td {
+    border: 1px solid #777;
+    padding: 1.8mm;
+    vertical-align: top;
+    line-height: 1.35;
+  }
+
+  .pdf-page th {
+    background: #eee !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .pdf-page-number {
+    position: absolute;
+    bottom: 6mm;
+    left: 12mm;
+    font-size: 8pt;
+    color: #555;
+  }
 }
