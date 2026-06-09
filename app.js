@@ -208,9 +208,22 @@ function option(value, text) {
 
 function populateGovernorates() {
   governorateFilter.querySelectorAll('option:not(:first-child)').forEach(o => o.remove());
-  [...new Set(lcs.map(governorate).filter(Boolean))]
-    .sort((a, b) => a.localeCompare(b, 'ar'))
-    .forEach(g => governorateFilter.appendChild(option(g, g)));
+
+  const governorateOrder = [
+    'شمال غزة',
+    'شرق غزة',
+    'غرب غزة',
+    'الوسطى',
+    'شرق خانيونس',
+    'غرب خانيونس',
+    'رفح'
+  ];
+
+  governorateOrder.forEach(g => {
+    if (lcs.some(lc => governorate(lc) === g)) {
+      governorateFilter.appendChild(option(g, g));
+    }
+  });
 }
 
 function populateCities() {
