@@ -19,9 +19,12 @@ OUTPUT_FILE = Path("lcs.json")
 
 ALIASES = {
     "Learning Centre (EN)": ["Learning Centre (EN)", "Learning Center (EN)", "LC EN", "LC Name", "Name"],
+    "Learning Centre (AR)": ["Learning Centre (AR)", "Learning Center (AR)", "LC AR", "LC Name AR", "Name AR", "Arabic Name", "الاسم بالعربية", "اسم المركز"],
     "Latitude": ["Latitude", "Lat", "LAT", "latitude", "خط العرض", "Y"],
     "Longitude": ["Longitude", "Lon", "Long", "LON", "longitude", "خط الطول", "X"],
     "Directorate": ["Directorate", "المديرية", "Governorate"],
+    "Governorate": ["Governorate", "المحافظة"],
+    "City": ["City", "Area", "Neighborhood", "المدينة", "المنطقة", "الحي"],
     "Grades": ["Grades", "الصفوف"],
     "Address": ["Address", "Geographical Location", "العنوان", "Location"],
     "Include": ["Include"],
@@ -57,14 +60,18 @@ records = []
 for _, row in df.iterrows():
     lat = pd.to_numeric(row.get(cols["Latitude"]), errors="coerce")
     lon = pd.to_numeric(row.get(cols["Longitude"]), errors="coerce")
-    name = str(row.get(cols["Learning Centre (EN") if False else cols["Learning Centre (EN)"]) or "").strip()
+    name = str(row.get(cols["Learning Centre (EN)"]) or "").strip()
+    name_ar = str(row.get(cols["Learning Centre (AR)"]) or "").strip() if cols["Learning Centre (AR)"] else ""
     if pd.isna(lat) or pd.isna(lon) or not name:
         continue
     item = {
         "name": name,
+        "name_ar": name_ar or name,
         "lat": float(lat),
         "lon": float(lon),
         "directorate": str(row.get(cols["Directorate"]) or "").strip() if cols["Directorate"] else "",
+        "governorate": str(row.get(cols["Governorate"]) or "").strip() if cols["Governorate"] else "",
+        "city": str(row.get(cols["City"]) or "").strip() if cols["City"] else "",
         "grades": str(row.get(cols["Grades"]) or "").strip() if cols["Grades"] else "",
         "address": str(row.get(cols["Address"]) or "").strip() if cols["Address"] else "",
     }

@@ -72,7 +72,7 @@ h3 { margin: 0 0 6px; font-size: 18px; }
 @media (min-width: 720px) {
   .hero { padding: 28px; }
   .quick-actions { grid-template-columns: 1fr 1fr 1fr; }
-  .filters { grid-template-columns: 1fr 1fr 1fr; }
+  .filters { grid-template-columns: 1fr 1fr; }
   .search-label { grid-column: 1 / -1; }
 }
 @media print {

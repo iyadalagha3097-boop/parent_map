@@ -7,7 +7,8 @@
     "grades": "G1-G12",
     "address": "غزة - البلدة القديمة - جوار المسجد العجمي القديم",
     "students": 1274,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الكمالية"
   },
   {
     "name": "AlToffah",
@@ -17,7 +18,8 @@
     "grades": "KG2-G8",
     "address": "التفاح  ساحة الشوا",
     "students": 1147,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "التفاح"
   },
   {
     "name": "Abed alfattah hamood",
@@ -27,7 +29,8 @@
     "grades": "KG2-G5",
     "address": "الدرج الشرقي - شارع يافا - مدرسة عبد الفتاح",
     "students": 1387,
-    "capacity": 800
+    "capacity": 800,
+    "name_ar": "عبد الفتاح حمود"
   },
   {
     "name": "Dar Alarqam",
@@ -37,7 +40,8 @@
     "grades": "KG2-G12",
     "address": "التفاح الغربي - مدرسة دار الارقم",
     "students": 2358,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "دار الأرقم"
   },
   {
     "name": "Lolwa Alqatamai",
@@ -47,7 +51,8 @@
     "grades": "KG2-G9",
     "address": "جنوب دوار أنصار - مفترق شاورما معاذ",
     "students": 1142,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "لولوة القطامي"
   },
   {
     "name": "Tal AlZohoor",
@@ -57,7 +62,8 @@
     "grades": "KG2-G7",
     "address": "تل الهوي",
     "students": 749,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "تل الزهور"
   },
   {
     "name": "Nile School",
@@ -67,7 +73,8 @@
     "grades": "KG2-G12",
     "address": "غزة الرمال الجنوبي تل الهوا بجوار الدفاع المدني",
     "students": 1875,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "مدرسة النيل"
   },
   {
     "name": "Mayasim (Science Home) Primary",
@@ -77,7 +84,8 @@
     "grades": "KG2-G9",
     "address": "خان يونس لسان القرارة",
     "students": 2408,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "مياسم (بيت العلوم) الأساسية"
   },
   {
     "name": "Mariam Bent Omran",
@@ -87,7 +95,8 @@
     "grades": "KG2-G12",
     "address": "nan",
     "students": 4264,
-    "capacity": 4200
+    "capacity": 4200,
+    "name_ar": "مريم بنت عمران"
   },
   {
     "name": "Almotamizoon",
@@ -97,7 +106,8 @@
     "grades": "KG2-G10",
     "address": "خان يونس شارع الأمن الداخلي قبل الكنيس",
     "students": 2408,
-    "capacity": 2200
+    "capacity": 2200,
+    "name_ar": "المتميزون"
   },
   {
     "name": "Hadara",
@@ -107,7 +117,8 @@
     "grades": "G1-G12",
     "address": "خان يونس - مواصي القرارة",
     "students": 2415,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "حضارة"
   },
   {
     "name": "Al Amal Hope Secondary - qarara",
@@ -117,7 +128,8 @@
     "grades": "G7-G12",
     "address": "خان يونس مواصي القرارة",
     "students": 2188,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "الأمل الثانوية - القرارة"
   },
   {
     "name": "Alnusairat",
@@ -127,7 +139,8 @@
     "grades": "G10-G12",
     "address": "النصيرات - بجوار النادي الأهلي",
     "students": 2026,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "النصيرات"
   },
   {
     "name": "Beloved Palestine",
@@ -137,7 +150,8 @@
     "grades": "G1-G12",
     "address": "خان يونس - شارع 5",
     "students": 3223,
-    "capacity": 3000
+    "capacity": 3000,
+    "name_ar": "فلسطين الحبيبة"
   },
   {
     "name": "Sanabel KH",
@@ -147,7 +161,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس - شارع 5",
     "students": 2318,
-    "capacity": 2600
+    "capacity": 2600,
+    "name_ar": "سنابل خان يونس"
   },
   {
     "name": "Ghaith",
@@ -157,7 +172,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس - شارع 5",
     "students": 3520,
-    "capacity": 2600
+    "capacity": 2600,
+    "name_ar": "غيث"
   },
   {
     "name": "Maarif Al Mazoon Secondary",
@@ -167,7 +183,8 @@
     "grades": "KG2-G6",
     "address": "خان يونس مواصي القرارة",
     "students": 1899,
-    "capacity": 2200
+    "capacity": 2200,
+    "name_ar": "معارف المازون الثانوية"
   },
   {
     "name": "Ahmed Mansi",
@@ -177,7 +194,8 @@
     "grades": "KG2-G10",
     "address": "خان يونس بئر 18 أرض أبو الحصين",
     "students": 1149,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "أحمد منسي"
   },
   {
     "name": "Gorot Aloot",
@@ -187,7 +205,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس - شارع النص",
     "students": 1772,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "غوروت علوت"
   },
   {
     "name": "Ghassan Kanafani",
@@ -197,7 +216,8 @@
     "grades": "G1-G12",
     "address": "خان يونس الشارع المقابل لمحطة العطار",
     "students": 5307,
-    "capacity": 3000
+    "capacity": 3000,
+    "name_ar": "غسان كنفاني"
   },
   {
     "name": "Watan",
@@ -207,7 +227,8 @@
     "grades": "KG2-G9",
     "address": "خان يونس شارع روني",
     "students": 2422,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "وطن"
   },
   {
     "name": "Alshafee",
@@ -217,7 +238,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس المعسكر - مقابل المحكمة الشرعية",
     "students": 1432,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الشافعي"
   },
   {
     "name": "Alaqsa",
@@ -227,7 +249,8 @@
     "grades": "G1-G12",
     "address": "خان يونس المواصي - حرم جامعة الأقصى",
     "students": 2186,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الأقصى"
   },
   {
     "name": "Almajd",
@@ -237,7 +260,8 @@
     "grades": "KG2-G3",
     "address": "خان يونس - المواصي - مدينة أصداء",
     "students": 983,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "المجد"
   },
   {
     "name": "Alrayaheen",
@@ -247,7 +271,8 @@
     "grades": "G4-G9",
     "address": "خان يونس - المواصي - مدينة أصداء",
     "students": 1271,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الرياحين"
   },
   {
     "name": "Al Tawoon",
@@ -257,7 +282,8 @@
     "grades": "G10-G12",
     "address": "خان يونس - المواصي - مدينة أصداء",
     "students": 900,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "التعاون"
   },
   {
     "name": "Amal Malasia",
@@ -267,7 +293,8 @@
     "grades": "G1-G12",
     "address": "خان يونس حي الامل شارع المدرسة",
     "students": 2828,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "أمل ماليزيا"
   },
   {
     "name": "Alamal Kg",
@@ -277,7 +304,8 @@
     "grades": "KG2-G4",
     "address": "خان يونس حي الأمل بجوار جمعية إعمار",
     "students": 2307,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "الأمل - رياض أطفال"
   },
   {
     "name": "Alyasmeen",
@@ -287,7 +315,8 @@
     "grades": "KG2-G2",
     "address": "خان يونس الحاووز",
     "students": 444,
-    "capacity": 800
+    "capacity": 800,
+    "name_ar": "الياسمين"
   },
   {
     "name": "Hamad 1",
@@ -297,7 +326,8 @@
     "grades": "KG2-G5",
     "address": "خان يونس مدينة حمد",
     "students": 1975,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "حمد 1"
   },
   {
     "name": "Hamad 2",
@@ -307,7 +337,8 @@
     "grades": "G6-G9",
     "address": "خان يونس مدينة حمد",
     "students": 1767,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "حمد 2"
   },
   {
     "name": "Almustaqbal",
@@ -317,7 +348,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس البراق الجنوبي",
     "students": 1786,
-    "capacity": 2200
+    "capacity": 2200,
+    "name_ar": "المستقبل"
   },
   {
     "name": "Ibn Roshd Primary & Secondary",
@@ -327,7 +359,8 @@
     "grades": "KG2-G12",
     "address": "الزوايدة - التعابين",
     "students": 3298,
-    "capacity": 3400
+    "capacity": 3400,
+    "name_ar": "ابن رشد الأساسية والثانوية"
   },
   {
     "name": "Khadeeja 1",
@@ -337,7 +370,8 @@
     "grades": "KG2-G9",
     "address": "دير البلح البصة",
     "students": 1311,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "خديجة 1"
   },
   {
     "name": "Khawla",
@@ -347,7 +381,8 @@
     "grades": "G5-G9",
     "address": "دير البلح - شار ع مستشفى الأقصى",
     "students": 798,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "خولة"
   },
   {
     "name": "Sukaina",
@@ -357,7 +392,8 @@
     "grades": "G3-G7",
     "address": "دير البلح - شارع مديرية الأوقاف",
     "students": 690,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "سكينة"
   },
   {
     "name": "Yasser Alnamrouti",
@@ -367,7 +403,8 @@
     "grades": "G10-G12",
     "address": "خان يونس مدينة حمد",
     "students": 2072,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "ياسر النمروطي"
   },
   {
     "name": "Almanfalouti",
@@ -377,7 +414,8 @@
     "grades": "G8-G12",
     "address": "دير البلح شارع مديرية الأوقاف",
     "students": 2058,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "المنفلوطي"
   },
   {
     "name": "Sanabel 1",
@@ -387,7 +425,8 @@
     "grades": "KG2-G7",
     "address": "دير البلح - شارع السلام",
     "students": 2433,
-    "capacity": 2600
+    "capacity": 2600,
+    "name_ar": "سنابل 1"
   },
   {
     "name": "Sanabel 2",
@@ -397,7 +436,8 @@
     "grades": "G8-G12",
     "address": "دير البلح - شارع السلام",
     "students": 2876,
-    "capacity": 2600
+    "capacity": 2600,
+    "name_ar": "سنابل 2"
   },
   {
     "name": "Deir Albalah 1",
@@ -407,7 +447,8 @@
     "grades": "G3-G5",
     "address": "دير البلح  بجوار عيادة الحكومة",
     "students": 552,
-    "capacity": 800
+    "capacity": 800,
+    "name_ar": "دير البلح 1"
   },
   {
     "name": "Deir Albalah 2",
@@ -417,7 +458,8 @@
     "grades": "G10-G12",
     "address": "دير البلح  بجوار عيادة الحكومة",
     "students": 1266,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "دير البلح 2"
   },
   {
     "name": "Abdel Kareem Alaklouk",
@@ -427,7 +469,8 @@
     "grades": "G6-G9",
     "address": "دير البلح - بجوار عيادة الحكومة",
     "students": 1195,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "عبد الكريم العكلوك"
   },
   {
     "name": "Alaisheya 1",
@@ -437,7 +480,8 @@
     "grades": "KG2-G9",
     "address": "دير البلح - خلف البلدية",
     "students": 2224,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "العائشية 1"
   },
   {
     "name": "Alaisheya 2",
@@ -447,7 +491,8 @@
     "grades": "G10-G12",
     "address": "دير البلح - خلف البلدية",
     "students": 2048,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "العائشية 2"
   },
   {
     "name": "Rofaida",
@@ -457,7 +502,8 @@
     "grades": "G1-G9",
     "address": "دير البلح - بجوار الهلال الأحمر",
     "students": 637,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "رفيدة"
   },
   {
     "name": "Yafa",
@@ -467,7 +513,8 @@
     "grades": "KG2-G9",
     "address": "دير البلح-حي البشارة جوار مستشفى يافا",
     "students": 725,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "يافا"
   },
   {
     "name": "Bader",
@@ -477,7 +524,8 @@
     "grades": "KG2-G12",
     "address": "دير البلح - المحطة ملعب عنان",
     "students": 2229,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "بدر"
   },
   {
     "name": "Khaled Ben Alwaleed",
@@ -487,7 +535,8 @@
     "grades": "KG2-G9",
     "address": "النصيرات - بجوار المديرية",
     "students": 1625,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "خالد بن الوليد"
   },
   {
     "name": "Muscat Secondary",
@@ -497,7 +546,8 @@
     "grades": "G10-G12",
     "address": "النصيرات - شارع العشرين بجوار المديرية",
     "students": 4457,
-    "capacity": 3600
+    "capacity": 3600,
+    "name_ar": "مسقط الثانوية"
   },
   {
     "name": "Mamdouh Saidam",
@@ -507,7 +557,8 @@
     "grades": "G10-G12",
     "address": "النصيرات - خلف المديرية",
     "students": 1932,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "ممدوح صيدم"
   },
   {
     "name": "Filter",
@@ -517,7 +568,8 @@
     "grades": "G1-G12",
     "address": "دير البلح -شارع مديرية الاوقاف",
     "students": 1138,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "فلتر"
   },
   {
     "name": "Alburaij 1",
@@ -527,7 +579,8 @@
     "grades": "KG2-G12",
     "address": "nan",
     "students": 1730,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "البريج 1"
   },
   {
     "name": "Alnojoom",
@@ -537,7 +590,8 @@
     "grades": "KG2-G9",
     "address": "النصيرات - بجوار النادي الأهلي",
     "students": 926,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "النجوم"
   },
   {
     "name": "Mawasi",
@@ -547,7 +601,8 @@
     "grades": "KG2-G6",
     "address": "خان يونس المواصي بالقرب من كلية الرباط",
     "students": 878,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "المواصي"
   },
   {
     "name": "Anwar",
@@ -557,7 +612,8 @@
     "grades": "KG2-G12",
     "address": "خانيونس منطقة الاقليمي",
     "students": 3404,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "أنوار"
   },
   {
     "name": "Zahrat Al-Amal (Flower of Hope)",
@@ -567,7 +623,8 @@
     "grades": "KG2-G12",
     "address": "خانيونس منطقة الاقليمي",
     "students": 1826,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "زهرة الأمل"
   },
   {
     "name": "Basmet Amal",
@@ -577,7 +634,8 @@
     "grades": "KG2-G9",
     "address": "خانيونس بئر 19",
     "students": 1489,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "بسمة أمل"
   },
   {
     "name": "Rowafid Al-Amal",
@@ -587,7 +645,8 @@
     "grades": "KG2-G12",
     "address": "خانبونس بئر 20",
     "students": 2192,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "روافد الأمل"
   },
   {
     "name": "Al-Zahraa",
@@ -597,7 +656,8 @@
     "grades": "KG2-G12",
     "address": "خانيونس بئر 19",
     "students": 1168,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الزهراء"
   },
   {
     "name": "Bodoor Al Amal (Seeds of Hope)",
@@ -607,7 +667,8 @@
     "grades": "KG2-G12",
     "address": "خانيونس بئر 18",
     "students": 1704,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "بذور الأمل"
   },
   {
     "name": "Burair",
@@ -617,7 +678,8 @@
     "grades": "KG2-G3",
     "address": "غزة الصفطاوي",
     "students": 709,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "برير"
   },
   {
     "name": "Huthaifah bin Al-Yaman",
@@ -627,7 +689,8 @@
     "grades": "KG2-G10",
     "address": "بئر النعجة مقابل عيادة أم عوني الشوا",
     "students": 756,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "حذيفة بن اليمان"
   },
   {
     "name": "Saleh",
@@ -637,7 +700,8 @@
     "grades": "KG2-G10",
     "address": "الخزندار أرض عنان مخيم صالح البردويل",
     "students": 663,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "صالح"
   },
   {
     "name": "Balqees Al-Yaman",
@@ -647,7 +711,8 @@
     "grades": "KG2-G10",
     "address": "مقابل مدرسة الراهبات الوردية",
     "students": 941,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "بلقيس اليمن"
   },
   {
     "name": "Hasan",
@@ -657,7 +722,8 @@
     "grades": "KG2-G9",
     "address": "النصر شارع العيون",
     "students": 595,
-    "capacity": 800
+    "capacity": 800,
+    "name_ar": "حسن"
   },
   {
     "name": "Suliman Sultan",
@@ -667,7 +733,8 @@
     "grades": "KG2-G10",
     "address": "شارع الثورة",
     "students": 1271,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "سليمان سلطان"
   },
   {
     "name": "Matahen",
@@ -677,7 +744,8 @@
     "grades": "KG2-G9",
     "address": "دير البلح - شارع البركة - مسجد المجاهدين",
     "students": 983,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "المطاحن"
   },
   {
     "name": "Jaafar",
@@ -687,7 +755,8 @@
     "grades": "KG2-G6",
     "address": "شارع 8 قرب الصالات",
     "students": 1069,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "جعفر"
   },
   {
     "name": "Sanabel Al-Samer",
@@ -697,7 +766,8 @@
     "grades": "G1-G10",
     "address": "مفترق السامر بجانب مدرسة الإمام الشافعي",
     "students": 1136,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "سنابل السامر"
   },
   {
     "name": "Rawabi Al-Toffah",
@@ -707,7 +777,8 @@
     "grades": "KG2-G10",
     "address": "التفاح - شارع يافا - خلف مسجد السلف",
     "students": 1623,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "روابي التفاح"
   },
   {
     "name": "Gheras Al-Sabrah",
@@ -717,7 +788,8 @@
     "grades": "KG2-G7",
     "address": "غزة - الصبرة - بجوار مركز الوكالة الصحي",
     "students": 1253,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "غراس الصبرة"
   },
   {
     "name": "Awda Roots",
@@ -727,7 +799,8 @@
     "grades": "KG2-G11",
     "address": "الزيتون - شارع النديم غرب مدرسة عين جالوت",
     "students": 1021,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "جذور العودة"
   },
   {
     "name": "Afaq",
@@ -737,7 +810,8 @@
     "grades": "KG2-G6",
     "address": "العطار، بالقرب من اطباء بلا حدود، شرق الكنيس",
     "students": 945,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "آفاق"
   },
   {
     "name": "Shams Al-Ofoq",
@@ -747,7 +821,8 @@
     "grades": "KG2-G10",
     "address": "مخيم شمس بالقرب من الثقافة والفكر الحر",
     "students": 1005,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "شمس الأفق"
   },
   {
     "name": "Rowad",
@@ -757,7 +832,8 @@
     "grades": "KG2-G9",
     "address": "منطقة العطار - بجوار الكنيس",
     "students": 2077,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "رواد"
   },
   {
     "name": "Hadeeqa- Bonian",
@@ -767,7 +843,8 @@
     "grades": "G1-G8",
     "address": "غزة - الزيتون - خلف مبنى الأوقاف",
     "students": 2142,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "حديقة - بنيان"
   },
   {
     "name": "Mosa Bin Nusair",
@@ -777,7 +854,8 @@
     "grades": "KG2-G10",
     "address": "التفاح شارع النفق",
     "students": 1142,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "موسى بن نصير"
   },
   {
     "name": "Ard Zaytoon",
@@ -787,7 +865,8 @@
     "grades": "KG2-G11",
     "address": "الزيتون - شارع النديم - أرض أبومراحيل",
     "students": 2431,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "أرض الزيتون"
   },
   {
     "name": "Fahmi Al-Jerjawi",
@@ -797,7 +876,8 @@
     "grades": "KG2-G10",
     "address": "الدرج - بالقرب من عيادة الدرج",
     "students": 1659,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "فهمي الجرجاوي"
   },
   {
     "name": "Masqat-Toffah",
@@ -807,7 +887,8 @@
     "grades": "KG2-G11",
     "address": "شارع النفق(بورسعيد) مسجد حراء",
     "students": 1056,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "مسقط - التفاح"
   },
   {
     "name": "Shadia Abu Ghazalah",
@@ -817,7 +898,8 @@
     "grades": "KG2-G9",
     "address": "شمال غزة -جباليا - الفالوجا",
     "students": 815,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "شادية أبو غزالة"
   },
   {
     "name": "Manarah",
@@ -827,7 +909,8 @@
     "grades": "KG2-G12",
     "address": "أرض الشنطي مقابل مسجد عمر بن الخطاب",
     "students": 1519,
-    "capacity": 2800
+    "capacity": 2800,
+    "name_ar": "منارة"
   },
   {
     "name": "Salah Al-Deen",
@@ -837,7 +920,8 @@
     "grades": "KG2-G10",
     "address": "بيت لاهيا/ الفاخورة بجوار صالة الفريد",
     "students": 1435,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "صلاح الدين"
   },
   {
     "name": "Awni Al-Herthani",
@@ -847,7 +931,8 @@
     "grades": "KG2-G8",
     "address": "شارع مصنع اللبن",
     "students": 1395,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "عوني الحرثاني"
   },
   {
     "name": "Falooja",
@@ -857,7 +942,8 @@
     "grades": "KG2-G12",
     "address": "معسكر جباليا / مربع مدارس الفالوجا",
     "students": 1530,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "الفالوجا"
   },
   {
     "name": "Itqan",
@@ -867,7 +953,8 @@
     "grades": "KG2-G9",
     "address": "حي عبادالرحمن",
     "students": 1021,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "إتقان"
   },
   {
     "name": "Osama Bin Zaid",
@@ -877,7 +964,8 @@
     "grades": "G5-G12",
     "address": "الصفطاوي",
     "students": 1766,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "أسامة بن زيد"
   },
   {
     "name": "Othman Bin Affan",
@@ -887,7 +975,8 @@
     "grades": "KG2-G9",
     "address": "التوام مقابل موقع ال 17",
     "students": 1105,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "عثمان بن عفان"
   },
   {
     "name": "Saad Bin Abi Waqqas",
@@ -897,7 +986,8 @@
     "grades": "G5-G12",
     "address": "حي عباد الرحمن شارع الصفطاوي",
     "students": 1200,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "سعد بن أبي وقاص"
   },
   {
     "name": "Sarari",
@@ -907,7 +997,8 @@
     "grades": "KG2-G10",
     "address": "شمال غزة جباليا البلد سراري بجوار مصلى الحسن",
     "students": 1138,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "سراري"
   },
   {
     "name": "Ab-Buraq",
@@ -917,7 +1008,8 @@
     "grades": "KG2-G12",
     "address": "جنوب مقبرة الشيخ رضوان",
     "students": 1301,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "البراق"
   },
   {
     "name": "Asmaa Bint AbuBakr",
@@ -927,7 +1019,8 @@
     "grades": "KG2-G12",
     "address": "تقاطع شارع الجلاء مع الشيخ رضوان",
     "students": 1722,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "أسماء بنت أبي بكر"
   },
   {
     "name": "Jaleel",
@@ -937,7 +1030,8 @@
     "grades": "KG2-G12",
     "address": "مقابل منتزة برشلونة",
     "students": 1287,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "الجليل"
   },
   {
     "name": "Kafer Qasem",
@@ -947,7 +1041,8 @@
     "grades": "KG2-G12",
     "address": "غرب برج الوحدة",
     "students": 2237,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "كفر قاسم"
   },
   {
     "name": "Mosab Bin Omair",
@@ -957,7 +1052,8 @@
     "grades": "KG2-G9",
     "address": "شرق رمزون الشيخ رضوان",
     "students": 978,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "مصعب بن عمير"
   },
   {
     "name": "Nasr",
@@ -967,7 +1063,8 @@
     "grades": "KG2-G11",
     "address": "داخل مدرسة النصر",
     "students": 922,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "النصر"
   },
   {
     "name": "Ruqayya",
@@ -977,7 +1074,8 @@
     "grades": "KG2-G12",
     "address": "بالقرب مستشفى الأردني",
     "students": 1625,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "رقية"
   },
   {
     "name": "Sheikh Radwan",
@@ -987,7 +1085,8 @@
     "grades": "KG2-G9",
     "address": "شمال مسجد الشيخ رضوان",
     "students": 1088,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الشيخ رضوان"
   },
   {
     "name": "Adnan Al Alami",
@@ -997,7 +1096,8 @@
     "grades": "KG2-G11",
     "address": "شمال أبراج الفيروز",
     "students": 1193,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "عدنان العلمي"
   },
   {
     "name": "Al Azhar",
@@ -1007,7 +1107,8 @@
     "grades": "KG2-G12",
     "address": "غرب جامعة الأزهر",
     "students": 2139,
-    "capacity": 2800
+    "capacity": 2800,
+    "name_ar": "الأزهر"
   },
   {
     "name": "Al Sharqa",
@@ -1017,7 +1118,8 @@
     "grades": "KG2-G11",
     "address": "غرب جامعة القدس المفتوحة",
     "students": 1332,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الشرقة"
   },
   {
     "name": "Kateeba",
@@ -1027,7 +1129,8 @@
     "grades": "KG2-G6",
     "address": "الرمال أرض الكتيبة",
     "students": 1621,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "الكتيبة"
   },
   {
     "name": "Sawafeer",
@@ -1037,7 +1140,8 @@
     "grades": "KG2-G12",
     "address": "المقوسي داخل مدرسة السوافير",
     "students": 1877,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "السوافير"
   },
   {
     "name": "Talented",
@@ -1047,7 +1151,8 @@
     "grades": "KG2-G11",
     "address": "سوق الشيخ رضوان",
     "students": 1124,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الموهوبون"
   },
   {
     "name": "Resalah",
@@ -1057,7 +1162,8 @@
     "grades": "KG2-G9",
     "address": "خان يونس -مواصي القرارة بالقرب من جامع الهداية",
     "students": 1131,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "رسالة"
   },
   {
     "name": "Masar",
@@ -1067,7 +1173,8 @@
     "grades": "G1-G12",
     "address": "المواصي الشمالية بالقرب من مسجد الهداية",
     "students": 1262,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "مسار"
   },
   {
     "name": "Abdulhameed Khan",
@@ -1077,7 +1184,8 @@
     "grades": "KG2-G6",
     "address": "جنوب برج الاسري - مقابل مدرسة رؤية جنوب حمد",
     "students": 711,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "عبد الحميد خان"
   },
   {
     "name": "Human",
@@ -1087,7 +1195,8 @@
     "grades": "KG2-G10",
     "address": "مواصي القرارة،شمال كافتيريا الأهرام، مصيف امواج",
     "students": 1344,
-    "capacity": 2200
+    "capacity": 2200,
+    "name_ar": "إنسان"
   },
   {
     "name": "Omar Al-Agha",
@@ -1097,7 +1206,8 @@
     "grades": "KG2-G9",
     "address": "شمال مدينة حمد بجوار مصنع الكرتون",
     "students": 2408,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "عمر الآغا"
   },
   {
     "name": "Romida",
@@ -1107,7 +1217,8 @@
     "grades": "KG2-G10",
     "address": "مفترق الصناعة مع شارع خمسة مزارع فتوح",
     "students": 924,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "روميدا"
   },
   {
     "name": "Scholars without borders",
@@ -1117,7 +1228,8 @@
     "grades": "KG2-G12",
     "address": "شارع خمسة شرق مدرسة المواصي",
     "students": 2770,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "علماء بلا حدود"
   },
   {
     "name": "Wahg",
@@ -1127,7 +1239,8 @@
     "grades": "KG2-G12",
     "address": "خانيونس -البلد -سوق الزيتون -ديوان عائلة الفرا",
     "students": 944,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "وهج"
   },
   {
     "name": "Ibn Khaldoun",
@@ -1137,7 +1250,8 @@
     "grades": "KG2-G9",
     "address": "خان يونس البلد بجوار مدرسة عبد الله ابو ستة",
     "students": 1473,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "ابن خلدون"
   },
   {
     "name": "Abdullah Abu Sitta",
@@ -1147,7 +1261,8 @@
     "grades": "KG2-G9",
     "address": "شارع القسام بالقرب من كلية مجتمع الأقصى",
     "students": 1514,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "عبد الله أبو ستة"
   },
   {
     "name": "AlFajr",
@@ -1157,7 +1272,8 @@
     "grades": "KG2-G6",
     "address": "مقابل كافتيريا الأصدقاء",
     "students": 695,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الفجر"
   },
   {
     "name": "Al-Barakah",
@@ -1167,7 +1283,8 @@
     "grades": "KG2-G9",
     "address": "خانيونس - شارع المجايدة - طريق البحر",
     "students": 807,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "البركة"
   },
   {
     "name": "Al Thanaa",
@@ -1177,7 +1294,8 @@
     "grades": "KG2-G10",
     "address": "حي الياباني - خلف برسكت",
     "students": 1344,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الثناء"
   },
   {
     "name": "Anqaa 1",
@@ -1187,7 +1305,8 @@
     "grades": "G6-G12",
     "address": "شارع الحية (الجهة الغربية ) - بجوار موقع التل",
     "students": 987,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "العنقاء 1"
   },
   {
     "name": "Haifa",
@@ -1197,7 +1316,8 @@
     "grades": "G10-G12",
     "address": "خان يونس البلد شارع القسام",
     "students": 1482,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "حيفا"
   },
   {
     "name": "Israa",
@@ -1207,7 +1327,8 @@
     "grades": "KG2-G12",
     "address": "خانيونس الحي النمساوي مدرسة الإسراء",
     "students": 2355,
-    "capacity": 2200
+    "capacity": 2200,
+    "name_ar": "الإسراء"
   },
   {
     "name": "Lotus Flower",
@@ -1217,7 +1338,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس - المواصي - خلف محطة تحلية اللحام",
     "students": 1938,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "زهرة اللوتس"
   },
   {
     "name": "Life and Freedom",
@@ -1227,7 +1349,8 @@
     "grades": "KG2-G10",
     "address": "موقع القادسية",
     "students": 1328,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الحياة والحرية"
   },
   {
     "name": "Durrat Al-Mawasi",
@@ -1237,7 +1360,8 @@
     "grades": "KG2-G12",
     "address": "شارع مختار المجايده مسجد ام خليل",
     "students": 1400,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "درة المواصي"
   },
   {
     "name": "Nibras",
@@ -1247,7 +1371,8 @@
     "grades": "KG2-G10",
     "address": "خان يونس حي الامل العرايشية منتزه البركة",
     "students": 1070,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "نبراس"
   },
   {
     "name": "Safa and Marwa",
@@ -1257,7 +1382,8 @@
     "grades": "G1-G10",
     "address": "البطن السمين - غرب دوار بريكة",
     "students": 1493,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الصفا والمروة"
   },
   {
     "name": "Sultan Mahmoud",
@@ -1267,7 +1393,8 @@
     "grades": "KG2-G9",
     "address": "مقابل جامعة الاقصى البوابة الرئيسية",
     "students": 1412,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "سلطان محمود"
   },
   {
     "name": "Yaqeen",
@@ -1277,7 +1404,8 @@
     "grades": "KG2-G5",
     "address": "شارع العبارة الشرقي",
     "students": 1157,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "يقين"
   },
   {
     "name": "Al-Nour 2",
@@ -1287,7 +1415,8 @@
     "grades": "KG2-G9",
     "address": "دير البلح شارع عكيلة خلف محطة عكيلة",
     "students": 961,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "النور 2"
   },
   {
     "name": "Mohammed Abu Lia",
@@ -1297,7 +1426,8 @@
     "grades": "KG2-G12",
     "address": "nan",
     "students": 2775,
-    "capacity": 4000
+    "capacity": 4000,
+    "name_ar": "محمد أبو لية"
   },
   {
     "name": "Buraig 2",
@@ -1307,7 +1437,8 @@
     "grades": "G1-G9",
     "address": "البريج - خلف محطة ابو عاصي - مخيم العائدين",
     "students": 1264,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "البريج 2"
   },
   {
     "name": "Palestine Centre",
@@ -1317,7 +1448,8 @@
     "grades": "KG2-G9",
     "address": "احناا المواصي بالقرب من  مسجد عثمان بن عفان بئر 22",
     "students": 1209,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "مركز فلسطين"
   },
   {
     "name": "Al Quds",
@@ -1327,7 +1459,8 @@
     "grades": "KG2-G9",
     "address": "مخيم طيور الشمس",
     "students": 2161,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "القدس"
   },
   {
     "name": "Atfal Gaza",
@@ -1337,7 +1470,8 @@
     "grades": "KG2-G6",
     "address": "شرق جمعيه الكتاب والسنة",
     "students": 1451,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "أطفال غزة"
   },
   {
     "name": "Bodoor Al Salam",
@@ -1347,7 +1481,8 @@
     "grades": "KG2-G10",
     "address": "مواصي رفح الشمالية خلف مستشفى الصليب الاحمر",
     "students": 1916,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "بذور السلام"
   },
   {
     "name": "Bokra Elna",
@@ -1357,7 +1492,8 @@
     "grades": "KG2-G7",
     "address": "مخيم حي السلام",
     "students": 1150,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "بكرا إلنا"
   },
   {
     "name": "Mohamed Salah Qeshtah",
@@ -1367,7 +1503,8 @@
     "grades": "KG2-G10",
     "address": "بئر 19 شارع محطة ايتا",
     "students": 1421,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "محمد صلاح قشطة"
   },
   {
     "name": "Talaea Rafah",
@@ -1377,7 +1514,8 @@
     "grades": "KG2-G10",
     "address": "شارع الرشيد شمال مستشفى الميداني البريطاني",
     "students": 1672,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "طلائع رفح"
   },
   {
     "name": "Al-Hamd",
@@ -1387,7 +1525,8 @@
     "grades": "KG2-G9",
     "address": "مفترق اصداء الغربي-خلف منجرة بارود",
     "students": 1421,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "الحمد"
   },
   {
     "name": "Abaqera",
@@ -1397,7 +1536,8 @@
     "grades": "KG2-G11",
     "address": "مسجد معاوية بجانب شاليه شمس",
     "students": 1748,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "عباقرة"
   },
   {
     "name": "Shams Al-Maarefa",
@@ -1407,7 +1547,8 @@
     "grades": "KG2-G10",
     "address": "شارع الرشيد مدخل أطباء بلا حدود ٢٠٠م",
     "students": 799,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "شمس المعرفة"
   },
   {
     "name": "Abdullah bin Rawaha",
@@ -1417,7 +1558,8 @@
     "grades": "KG2-G9",
     "address": "دير البلح - البركة - بجوار عيادة البركة الحكومية",
     "students": 967,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "عبد الله بن رواحة"
   },
   {
     "name": "Ferdous",
@@ -1427,7 +1569,8 @@
     "grades": "KG2-G10",
     "address": "فش فرش 2",
     "students": 1120,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الفردوس"
   },
   {
     "name": "Abu Obaida Bin Al-Jarrah",
@@ -1437,7 +1580,8 @@
     "grades": "KG2-G7",
     "address": "بيت لاهيا/ غرب مدرسة أبو عبيدة أرض علوان",
     "students": 709,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "أبو عبيدة بن الجراح"
   },
   {
     "name": "Owda",
@@ -1447,7 +1591,8 @@
     "grades": "KG2-G9",
     "address": "الزيتون - شارع النديم غرب مدرسة عين جالوت",
     "students": 1599,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "عودة"
   },
   {
     "name": "Yousef Al-Seddeeq",
@@ -1457,7 +1602,8 @@
     "grades": "KG2-G9",
     "address": "خانيونس بطن السمين خلف المقابر من الجهة الجنوبية",
     "students": 783,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "يوسف الصديق"
   },
   {
     "name": "Tal Zaatar",
@@ -1467,7 +1613,8 @@
     "grades": "KG2-G12",
     "address": "بيت لاهيا/ أصلان مدرسة تل الزعتر",
     "students": 1295,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "تل الزعتر"
   },
   {
     "name": "Ibdaa",
@@ -1477,7 +1624,8 @@
     "grades": "KG2-G9",
     "address": "خان يونس شارع الامن الداخلي خلف بركس السمري",
     "students": 1352,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "إبداع"
   },
   {
     "name": "Alawael",
@@ -1487,7 +1635,8 @@
     "grades": "G1-G9",
     "address": "خان يونس المواصي - العطار",
     "students": 1430,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "الأوائل"
   },
   {
     "name": "Life School Initiative",
@@ -1497,7 +1646,8 @@
     "grades": "G1-G12",
     "address": "خان يونس المواصي خلف المستشفى الكويتي",
     "students": 1998,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "مبادرة مدرسة الحياة"
   },
   {
     "name": "Ard Tayba",
@@ -1507,7 +1657,8 @@
     "grades": "G1-G12",
     "address": "خان يونس شرق جامعة الأقصى",
     "students": 3366,
-    "capacity": 2800
+    "capacity": 2800,
+    "name_ar": "أرض طيبة"
   },
   {
     "name": "Jarar Alqudwa",
@@ -1517,7 +1668,8 @@
     "grades": "KG2-G7",
     "address": "خان يونس المواصي بالقرب من مسجد القبة",
     "students": 1258,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "جرار القدوة"
   },
   {
     "name": "Life USA",
@@ -1527,7 +1679,8 @@
     "grades": "G1-G12",
     "address": "خان يونس حي الأمل اول شارع الترنس",
     "students": 2441,
-    "capacity": 2400
+    "capacity": 2400,
+    "name_ar": "لايف USA"
   },
   {
     "name": "Tareq Ben Zeyad",
@@ -1537,7 +1690,8 @@
     "grades": "KG2-G12",
     "address": "خان يونس البطن السمين بجوار المستشفى الأردني",
     "students": 2706,
-    "capacity": 2600
+    "capacity": 2600,
+    "name_ar": "طارق بن زياد"
   },
   {
     "name": "Falah",
@@ -1547,7 +1701,8 @@
     "grades": "G1-G9",
     "address": "الزيتون - قرب مسجد الامام الشافعي",
     "students": 1768,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "فلاح"
   },
   {
     "name": "Tafawuq",
@@ -1557,7 +1712,8 @@
     "grades": "KG2-G6",
     "address": "الكرامة / شارع المخابرات",
     "students": 138,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "تفوق"
   },
   {
     "name": "Haleema",
@@ -1567,7 +1723,8 @@
     "grades": "KG2-G9",
     "address": "جباليا البلد النزلة مقابل محطة خلة",
     "students": 1014,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "حليمة"
   },
   {
     "name": "Nakhwa",
@@ -1577,7 +1734,8 @@
     "grades": "KG2-G10",
     "address": "دير البلح- شارع البركة- مقابل محلات شادي بشير",
     "students": 2409,
-    "capacity": 2800
+    "capacity": 2800,
+    "name_ar": "نخوة"
   },
   {
     "name": "Masr",
@@ -1587,7 +1745,8 @@
     "grades": "KG2-G10",
     "address": "النصيرات بجوار شركة الكهرباء",
     "students": 1067,
-    "capacity": 800
+    "capacity": 800,
+    "name_ar": "مصر"
   },
   {
     "name": "Khadeeja 2",
@@ -1597,7 +1756,8 @@
     "grades": "G1-G12",
     "address": "دير البلح البصة",
     "students": 679,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "خديجة 2"
   },
   {
     "name": "That Al-Sawary",
@@ -1607,7 +1767,8 @@
     "grades": "KG2-G9",
     "address": "الكرامة / شارع المخابرات",
     "students": 328,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "ذات الصواري"
   },
   {
     "name": "Al-Hurriya Al-Jadedah",
@@ -1617,7 +1778,8 @@
     "grades": "KG2-G12",
     "address": "النصيرات - صلاح الدين - مفترق الشهداء",
     "students": 804,
-    "capacity": 2000
+    "capacity": 2000,
+    "name_ar": "الحرية الجديدة"
   },
   {
     "name": "Ein Helwa - Zahra School",
@@ -1627,7 +1789,8 @@
     "grades": "KG2-G10",
     "address": "مدينة الزهراء - المخيم المصري",
     "students": 613,
-    "capacity": 1800
+    "capacity": 1800,
+    "name_ar": "عين الحلوة - مدرسة الزهراء"
   },
   {
     "name": "Orooba",
@@ -1637,7 +1800,8 @@
     "grades": "KG2-G12",
     "address": "النصيرات - المخيم الجديد - مقابل مدارس الأونروا",
     "students": 1707,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "العروبة"
   },
   {
     "name": "Fathy Balawy",
@@ -1647,7 +1811,8 @@
     "grades": "G4-G12",
     "address": "البريج - شارع السكة - بجوار ملعب ابو هويشل",
     "students": 1342,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "فتحي البلعاوي"
   },
   {
     "name": "Amjad",
@@ -1657,7 +1822,8 @@
     "grades": "KG2-G10",
     "address": "جنوب جامعة الاقصى شرق محطة العطار",
     "students": 655,
-    "capacity": 1000
+    "capacity": 1000,
+    "name_ar": "أمجاد"
   },
   {
     "name": "Daraj Club",
@@ -1667,7 +1833,8 @@
     "grades": "G1-G12",
     "address": "شارع الصحابة",
     "students": 1025,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "نادي الدرج"
   },
   {
     "name": "Shorouq and Amal",
@@ -1677,7 +1844,8 @@
     "grades": "G1-G9",
     "address": "شارع البحر - بجوار نادي الخدمات",
     "students": 1059,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "شروق وأمل"
   },
   {
     "name": "Safe Space",
@@ -1687,7 +1855,8 @@
     "grades": "KG2-G9",
     "address": "خانيونس - شمال مفترق فش فرش",
     "students": 547,
-    "capacity": 1400
+    "capacity": 1400,
+    "name_ar": "المساحة الآمنة"
   },
   {
     "name": "Salah Khalaf",
@@ -1697,7 +1866,8 @@
     "grades": "KG2-G12",
     "address": "الشاطيء داخل مدرسة صلاح خلف",
     "students": 551,
-    "capacity": 1600
+    "capacity": 1600,
+    "name_ar": "صلاح خلف"
   },
   {
     "name": "Abdulrahman Bin Auf",
@@ -1707,7 +1877,8 @@
     "grades": "KG2-G10",
     "address": "رمزون الشيخ رضوان تقاطع الجلاء",
     "students": 984,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "عبد الرحمن بن عوف"
   },
   {
     "name": "Basheer Al-Rayyess",
@@ -1717,7 +1888,8 @@
     "grades": "KG2-G12",
     "address": "شارع الوحدة بجوار عيادة الرمال",
     "students": 882,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "بشير الريس"
   },
   {
     "name": "Shafee - North",
@@ -1727,7 +1899,8 @@
     "grades": "G1-G9",
     "address": "الزيتون ـ السامر ـ بالقرب من مسجد السوسي",
     "students": 798,
-    "capacity": 1200
+    "capacity": 1200,
+    "name_ar": "الشافعي - الشمال"
   },
   {
     "name": "Ibrahim Al-Khalil",
@@ -1737,6 +1910,7 @@
     "grades": "nan",
     "address": "الفالوجا - دوار الشهداء الستة",
     "students": 0,
-    "capacity": 0
+    "capacity": 0,
+    "name_ar": "إبراهيم الخليل"
   }
 ]
