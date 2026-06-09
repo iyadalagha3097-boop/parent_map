@@ -63,7 +63,7 @@ h2 { margin: 0; font-size: 20px; }
 h3 { margin: 0 0 6px; font-size: 18px; }
 .lc-meta, .address, .grades, .students { color: var(--muted); font-size: 14px; margin-top: 6px; }
 
-.card-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+
 .directions {
   display: inline-block;
   text-decoration: none;
@@ -76,6 +76,94 @@ h3 { margin: 0 0 6px; font-size: 18px; }
 
 .empty { padding: 16px; text-align: center; color: var(--muted); }
 .print-area { display: none; }
+
+.card-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+.directions { display: inline-block; text-decoration: none; color: white; background: var(--primary); padding: 10px 14px; border-radius: 12px; font-weight: 700; }
+.print-area.rendering-pdf {
+  display: block;
+  position: fixed;
+  right: -9999px;
+  top: 0;
+  width: 794px;
+  background: white;
+  color: #111;
+  z-index: -1;
+}
+.pdf-page {
+  width: 794px;
+  min-height: 1123px;
+  padding: 34px;
+  background: white;
+  direction: rtl;
+  font-family: Arial, Tahoma, sans-serif;
+  color: #111;
+  position: relative;
+  page-break-after: always;
+}
+.pdf-header {
+  display: grid;
+  grid-template-columns: 1fr 145px;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+.pdf-title-block h1,
+.pdf-page-title {
+  font-size: 24px;
+  margin: 0 0 8px;
+  color: #111;
+}
+.pdf-instruction {
+  font-size: 14px;
+  color: #222;
+  margin: 0 0 4px;
+  line-height: 1.6;
+}
+.pdf-link {
+  direction: ltr;
+  text-align: right;
+  font-size: 13px;
+  color: #111;
+  margin-top: 4px;
+}
+.pdf-qr-block { text-align: center; }
+.pdf-qr {
+  width: 132px;
+  height: 132px;
+  display: block;
+  margin: 0 auto;
+  background: white;
+  padding: 4px;
+}
+.pdf-filters,
+.pdf-count {
+  font-size: 13px;
+  margin: 5px 0;
+  color: #333;
+}
+.pdf-page table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  direction: rtl;
+  margin-top: 10px;
+}
+.pdf-page th,
+.pdf-page td {
+  border: 1px solid #888;
+  padding: 6px;
+  vertical-align: top;
+  line-height: 1.4;
+}
+.pdf-page th { background: #eee; }
+.pdf-page-number {
+  position: absolute;
+  bottom: 16px;
+  left: 34px;
+  font-size: 10px;
+  color: #555;
+}
+
 @media (min-width: 720px) {
   .hero { padding: 28px; }
   .quick-actions { grid-template-columns: 1fr 1fr; }

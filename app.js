@@ -310,16 +310,17 @@ function renderResults() {
   });
 }
 
-function buildPrintArea() {
-  const items = visibleLCs();
-  const filters = [
+function currentFiltersText() {
+  return [
     governorateFilter.value ? `المحافظة: ${governorateFilter.value}` : 'كل المحافظات',
     cityFilter.value ? `المدينة: ${cityFilter.value}` : 'كل المدن / المناطق',
     gradeFilter.value === 'KG_START' ? 'الصف الدراسي: البستان والتمهيدي والأول' : (gradeFilter.value ? `الصف الدراسي: ${gradeArabicLabel(gradeFilter.value)}` : 'كل الصفوف'),
     searchBox.value ? `بحث: ${searchBox.value}` : ''
   ].filter(Boolean).join(' | ');
+}
 
-  const rows = items.map((lc, i) => `
+function makePdfRows(items) {
+  return items.map((lc, i) => `
     <tr>
       <td>${i + 1}</td>
       <td>${escapeHtml(displayName(lc))}</td>
@@ -329,16 +330,92 @@ function buildPrintArea() {
       <td>${escapeHtml(gradesArabicText(grades(lc)))}</td>
     </tr>
   `).join('');
+}
 
-  printArea.innerHTML = `
-    <h1>قائمة مراكز التعليم</h1>
-    <p>${escapeHtml(filters)}</p>
-    <p>عدد المراكز: ${items.length}</p>
-    <table>
-      <thead><tr><th>#</th><th>المركز</th><th>المحافظة</th><th>المدينة / المنطقة</th><th>العنوان</th><th>الصفوف</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table>
-  `;
+function buildPrintArea() {
+  const items = visibleLCs();
+  const rowsPerFirstPage = 16;
+  const rowsPerPage = 22;
+  const pages = [];
+
+  pages.push(items.slice(0, rowsPerFirstPage));
+  for (let i = rowsPerFirstPage; i < items.length; i += rowsPerPage) {
+    pages.push(items.slice(i, i + rowsPerPage));
+  }
+
+  const pageHtml = pages.map((pageItems, pageIndex) => `
+    <section class="pdf-page">
+      ${pageIndex === 0 ? `
+        <div class="pdf-header">
+          <div class="pdf-title-block">
+            <h1>دليل مراكز التعليم في قطاع غزة</h1>
+            <p class="pdf-instruction">للوصول إلى الدليل الإلكتروني والبحث عن مراكز أخرى، يرجى مسح رمز QR.</p>
+            <p class="pdf-link">tinyurl.com/4fuhmz8b</p>
+          </div>
+          <div class="pdf-qr-block">
+            <img src="qr.jpeg" alt="QR code" class="pdf-qr" />
+          </div>
+        </div>
+        <p class="pdf-filters">${escapeHtml(currentFiltersText())}</p>
+        <p class="pdf-count">عدد المراكز: ${items.length}</p>
+      ` : `
+        <h2 class="pdf-page-title">دليل مراكز التعليم في قطاع غزة</h2>
+      `}
+      <table>
+        <thead>
+          <tr><th>#</th><th>المركز</th><th>المحافظة</th><th>المدينة / المنطقة</th><th>العنوان</th><th>الصفوف</th></tr>
+        </thead>
+        <tbody>${makePdfRows(pageItems)}</tbody>
+      </table>
+      <div class="pdf-page-number">${pageIndex + 1} / ${pages.length}</div>
+    </section>
+  `).join('');
+
+  printArea.innerHTML = pageHtml;
+}
+
+async function downloadPdf() {
+  if (!window.html2canvas || !window.jspdf) {
+    statusText.textContent = 'تعذر إنشاء ملف PDF. تأكد من اتصال الإنترنت ثم حاول مرة أخرى.';
+    return;
+  }
+
+  const oldText = pdfBtn.textContent;
+  pdfBtn.disabled = true;
+  pdfBtn.textContent = 'جاري إنشاء PDF...';
+  statusText.textContent = 'جاري إنشاء ملف PDF...';
+
+  try {
+    buildPrintArea();
+    printArea.classList.add('rendering-pdf');
+    await new Promise(resolve => setTimeout(resolve, 250));
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    const pages = [...printArea.querySelectorAll('.pdf-page')];
+
+    for (let i = 0; i < pages.length; i++) {
+      const canvas = await html2canvas(pages[i], {
+        scale: 2,
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        allowTaint: true
+      });
+      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      if (i > 0) pdf.addPage();
+      pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+    }
+
+    pdf.save('دليل_مراكز_التعليم.pdf');
+    statusText.textContent = `تم إنشاء ملف PDF لعدد ${visibleLCs().length} مركز.`;
+  } catch (err) {
+    console.error(err);
+    statusText.textContent = 'حدث خطأ أثناء إنشاء ملف PDF. يرجى المحاولة مرة أخرى.';
+  } finally {
+    printArea.classList.remove('rendering-pdf');
+    pdfBtn.disabled = false;
+    pdfBtn.textContent = oldText;
+  }
 }
 
 function escapeHtml(value) {
@@ -363,7 +440,7 @@ async function loadData() {
   populateCities();
   populateGrades();
   renderResults();
-  statusText.textContent = `تم تحميل ${lcs.length} مركز. القائمة تعرض افتراضياً المراكز التي تبدأ بالبستان أو التمهيدي.`;
+  statusText.textContent = `تم تحميل ${lcs.length} مركز. القائمة تعرض افتراضياً المراكز التي تبدأ بالبستان أو التمهيدي أو الأول.`;
 }
 
 governorateFilter.addEventListener('change', () => {
@@ -372,7 +449,7 @@ governorateFilter.addEventListener('change', () => {
   renderResults();
 });
 [cityFilter, gradeFilter, searchBox].forEach(el => el.addEventListener('input', renderResults));
-pdfBtn.addEventListener('click', () => { buildPrintArea(); window.print(); });
+pdfBtn.addEventListener('click', downloadPdf);
 clearBtn.addEventListener('click', clearFilters);
 
 loadData().catch(err => {
